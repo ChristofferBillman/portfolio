@@ -1,9 +1,9 @@
 import ChevronButton from './ChevronButton';
 import Page from './Page';
 
-export default function Post({ name, img, title, subtitle, body, images, ghlink, tags }) {
+export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year }) {
 	return (
-		<div style={{ marginTop: '6rem' }}>
+		<div className='layout-grid-container'>
 			<Page
 				name={name}
 				img={images[0]}
@@ -11,18 +11,24 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 				<div className='inner-content-container'>
 					<h1>{title}</h1>
-					<h3>{subtitle}</h3>
 					<div className='link-container'>
-						{tags ? tags.map(tag => <p className='muted-text'>{tag}</p>) : ''}
+						<h3>{subtitle}</h3>
+						<h4>{year}</h4>
+					</div>
+					<div className='link-container'>
+						{tags ? tags.map(tag => <p className='attention-text'>{tag}</p>) : ''}
 					</div>
 
 					<p className='justify-text'>{body}</p>
 
-					<a href={ghlink}>Källkod</a>
+					<div className='row'>
+						{ghlink ? <a href={ghlink}>Källkod</a> : ''}
+						<p className='clickable-text nomargin'>Visa bilder</p>
+					</div>
 
 
 				</div>
 			</Page>
-		</div>
+		</div >
 	);
 }

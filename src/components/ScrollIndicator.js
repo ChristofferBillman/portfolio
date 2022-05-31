@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 
 export default function ScrollIndicator({ currentPage, posts }) {
 	return (
-		<div className='scroll-indicator-container'>
+		<div className='scroll-indicator-container fadeIn stagger-1'>
 			<p
 				className='attention-text'
 				style={{ display: 'absolute', transform: 'translateX(60px) translateY(46px)' }}
