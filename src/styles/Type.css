@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+html {
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+}
+
+/* Heading */
+h1 {
+	font-size: 3rem;
+	font-weight: 900;
+	color: var(--black);
+}
+
+/* Section */
+h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--black);
+}
+
+/* Subsection */
+h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--black);
+}
+
+/* Subsubsection */
+h4 {
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: var(--light-black);
+}
+
+/* Paragraph */
+p {
+	font-size: 1rem;
+	font-weight: 400;
+	color: var(--black);
+}
+
+.muted-text {
+	color: var(--light-black);
+}
+
+.attention-text {
+	color: var(--lightest-black);
+	font-weight: 700;
+}
+
+.clickable-text {
+	cursor: pointer;
+	color: var(--blue);
+	font-weight: 700;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--blue);
+	font-weight: 700;
+}
+
+.justify-text {
+	text-align: justify;
+}
