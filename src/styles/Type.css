@@ -10,6 +10,8 @@ h1 {
 	font-size: 3rem;
 	font-weight: 900;
 	color: var(--black);
+	word-break: break-all;
+	margin-bottom: 0.5rem;
 }
 
 /* Section */
@@ -64,4 +66,8 @@ a {
 
 .justify-text {
 	text-align: justify;
+}
+
+.nomargin {
+	margin: 0;
 }
