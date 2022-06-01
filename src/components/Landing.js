@@ -1,6 +1,10 @@
 import Page from './Page'
-import { animateScroll } from 'react-scroll'
 import '../styles/Animations.css'
+
+/*
+ * The landing page. The first page you see when the site loads.
+ * Takes no props.
+ */
 
 export default function Landing() {
 	return (
@@ -41,8 +45,8 @@ export default function Landing() {
 
 				<div className='vertical-spacing' />
 
-				<div className='center fadeIn stagger-5' onClick={() => animateScroll.scrollMore(window.outerHeight - 6, { duration: 700, smooth: 'easeInOutQuart' })}>
-					<p className='clickable-text'>Se projekt</p>
+				<div className='center fadeIn stagger-5'>
+					<p className='attention-text'>Skrolla!</p>
 				</div>
 			</div>
 		</Page>

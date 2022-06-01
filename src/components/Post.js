@@ -1,5 +1,14 @@
 import Page from './Page';
 
+/*
+ * A post. A wrapper for a Page, which takes props related to a post instead of children.
+ * 
+ * Usage:
+ * <Post {...post}/>
+ * 
+ * Where post is an object with the props.
+ * 
+ */
 export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id }) {
 	return (
 		<div className='layout-grid-container' id={id}>

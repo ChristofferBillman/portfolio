@@ -1,6 +1,17 @@
 import { useState } from 'react';
 
 /*
+ * The scroll indicator seen on the left of the page.
+ * When dots are clicked, the page scrolls to the corresponding section.
+ * 
+ * Usage:
+ * <ScrollIndicator posts={arr}/>
+ * 
+ * Props:
+ * posts: An array in which the amount of elements will be the amount of dots displayed. 
+ */
+
+/*
  * TODO: Connect actual scroll position to the scroll indicator
  */
 

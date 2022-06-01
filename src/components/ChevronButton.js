@@ -1,3 +1,21 @@
+/*
+ * The buttons used for navigation up and down in the page.
+ *
+ * Usage:
+ * <ChevronButton 
+ *     chevronDirection='up'
+ *     text='Back'
+ *     onClick={func}
+ * 	   style={style}
+ * />
+ *
+ * Props:
+ * chevronDirection: 'up' or 'down'
+ * text: The text to display on the button
+ * onClick: The function to call when the button is clicked
+ * style: The style to apply to the button
+ */
+
 export default function ChevronButton({ text, chevronDirection, onClick, style }) {
 
 	const renderChevron = () => {

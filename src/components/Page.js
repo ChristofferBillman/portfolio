@@ -1,6 +1,18 @@
 import { useState } from 'react'
 import ChevronButton from './ChevronButton'
 
+/*
+ * The main layout of each page. Takes up the entire viewport.
+ * Takes props for the image, if to display navigation buttons, and the id of its container.
+ * 
+ * Note: Navigation buttons displayed but non-functional.
+ * 
+ * Usage:
+ * <Page img='labplant.png' navigationButtons={false} id='id'>
+ *     {children}
+ * </Page>
+ * 
+ */
 export default function Page({ children, img, navigationButtons, id }) {
 
 	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
