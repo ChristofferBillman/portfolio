@@ -76,7 +76,7 @@ body {
 .scroll-indicator-container {
   position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(50%);
   left: 1rem;
   display: flex;
   flex-direction: column;
@@ -89,11 +89,12 @@ body {
   height: 10px;
   border-radius: 50%;
   background-color: var(--gray);
-  margin: 1rem;
+  transition-duration: 200ms;
 }
 
 .scroll-indicator-current {
   background-color: var(--lightest-black);
+  transition-duration: 200ms;
 }
 
 .center {
@@ -118,4 +119,14 @@ body {
 .chevron-button p {
   margin-top: -10px;
   margin-bottom: -10px;
+}
+
+.opacity-0 {
+  opacity: 0;
+  transition: 200ms;
+}
+
+.opacity-1 {
+  opacity: 1;
+  transition: 200ms;
 }

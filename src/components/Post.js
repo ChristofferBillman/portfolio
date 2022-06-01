@@ -1,12 +1,12 @@
-import ChevronButton from './ChevronButton';
 import Page from './Page';
 
-export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year }) {
+export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id }) {
 	return (
-		<div className='layout-grid-container'>
+		<div className='layout-grid-container' id={id}>
 			<Page
 				name={name}
 				img={images[0]}
+				navigationButtons={false}
 			>
 
 				<div className='inner-content-container'>

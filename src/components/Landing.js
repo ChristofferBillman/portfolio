@@ -4,7 +4,7 @@ import '../styles/Animations.css'
 
 export default function Landing() {
 	return (
-		<Page name='landing' img='landing-img.png' navigationButtons={false}>
+		<Page img='landing-img.png' navigationButtons={false} id='landing'>
 			<div className='inner-content-container'>
 				<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
 				<h3 className='fadeIn stagger-2'>Civilingengörsstudent</h3>

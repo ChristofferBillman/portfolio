@@ -16,11 +16,12 @@ export default function App() {
           <Post
             key={index}
             {...post}
+            id={'post-' + index}
           />
         )
       }
       )}
-      <ScrollIndicator currentPage={0} posts={posts} />
+      <ScrollIndicator posts={posts} />
     </div >
   );
 }

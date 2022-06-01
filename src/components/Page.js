@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { Element, animateScroll } from 'react-scroll'
 import ChevronButton from './ChevronButton'
 
-export default function Page({ name, children, img, navigationButtons }) {
+export default function Page({ children, img, navigationButtons, id }) {
 
 	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
 
@@ -23,12 +22,12 @@ export default function Page({ name, children, img, navigationButtons }) {
 	return (
 		<>
 			{loaded ? (
-				<Element name={name} className='layout-grid'>
+				<div id={id} className='layout-grid'>
 					{showNavigationButtons() ? (
 						<ChevronButton
 							chevronDirection='up'
 							text='Tillbaka'
-							onClick={() => { animateScroll.scrollMore(-window.outerHeight + 6, { duration: 700, smooth: 'easeInOutQuart' }) }}
+							onClick={() => { /* something in the future maybe? */ }}
 							style={{ gridColumn: 2, gridRow: 1 }}
 						/>
 					) : ''}
@@ -51,11 +50,11 @@ export default function Page({ name, children, img, navigationButtons }) {
 						<ChevronButton
 							chevronDirection='down'
 							text='Nästa'
-							onClick={() => { animateScroll.scrollMore(window.outerHeight - 6, { duration: 700, smooth: 'easeInOutQuart' }) }}
+							onClick={() => { /* something in the future maybe? */ }}
 							style={{ gridColumn: 2, gridRow: 3 }}
 						/>
 					) : ''}
-				</Element>
+				</div>
 			) : (
 				<div className='layout-grid'>
 					<div className='layout-content'>
