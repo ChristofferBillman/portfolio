@@ -1,3 +1,6 @@
+/* Portfolio 4
+ * Copyright (c) 2022 Christoffer Billman. All rights reserved.
+*/
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Post from './components/Post';
