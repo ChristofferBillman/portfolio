@@ -71,16 +71,16 @@ export default function Gallery({ images }) {
 				/>
 			</div>
 			<div className='gallery-content'>
-				<AnimatePresence initial={false}>
+				<AnimatePresence initial={false} exitBeforeEnter>
 					<motion.img
 						src={images[currentImg]}
 						className='banner-img'
 						style={imgStyle}
 						onLoad={onImgLoad}
 						key={images[currentImg]}
-						initial={{ x: direction * 300, opacity: 0 }}
+						initial={{ x: -direction * 700, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: direction * 300, opacity: 0 }}
+						exit={{ x: direction * 700, opacity: 0 }}
 						transition={{
 							ease: 'easeInOut',
 							stiffness: 300,
