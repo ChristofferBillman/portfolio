@@ -14,8 +14,9 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 		<div className='layout-grid-container' id={id}>
 			<Page
 				name={name}
-				img={images[0]}
+				img={images}
 				navigationButtons={false}
+				useGallery={true}
 			>
 
 				<div className='inner-content-container'>

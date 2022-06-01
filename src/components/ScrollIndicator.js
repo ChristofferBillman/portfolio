@@ -15,9 +15,7 @@ import { useState } from 'react';
  * TODO: Connect actual scroll position to the scroll indicator
  */
 
-export default function ScrollIndicator({ posts }) {
-
-	const [currentPage, setCurrentPage] = useState(-1);
+export default function ScrollIndicator({ posts, currentPage, setCurrentPage }) {
 
 	const getScrollIndicators = (posts) => {
 		const scrollIndicators = []

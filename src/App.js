@@ -1,9 +1,12 @@
 /* Portfolio 4
  * Copyright (c) 2022 Christoffer Billman. All rights reserved.
 */
+import { useState } from 'react';
+
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Post from './components/Post';
+import Gallery from './components/Gallery';
 import './styles/App.css';
 import './styles/Mobile.css'
 import './styles/Type.css';
@@ -11,6 +14,9 @@ import './styles/Type.css';
 import { posts } from './data/posts';
 
 export default function App() {
+
+  const [currentPage, setCurrentPage] = useState(-1);
+
   return (
     <div className='App'>
       <Landing />
@@ -24,7 +30,7 @@ export default function App() {
         )
       }
       )}
-      <ScrollIndicator posts={posts} />
+      <ScrollIndicator posts={posts} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div >
   );
 }

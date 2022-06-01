@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ChevronButton from './ChevronButton'
+import Gallery from './Gallery'
 
 /*
  * The main layout of each page. Takes up the entire viewport.
@@ -8,12 +9,12 @@ import ChevronButton from './ChevronButton'
  * Note: Navigation buttons displayed but non-functional.
  * 
  * Usage:
- * <Page img='labplant.png' navigationButtons={false} id='id'>
+ * <Page img='labplant.png' navigationButtons={false} id='id' useGallery={true}>
  *     {children}
  * </Page>
  * 
  */
-export default function Page({ children, img, navigationButtons, id }) {
+export default function Page({ children, img, navigationButtons, id, useGallery }) {
 
 	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
 
@@ -28,7 +29,7 @@ export default function Page({ children, img, navigationButtons, id }) {
 	}
 	const imgStyle = {
 		opacity: imgOpacity,
-		transform: `translateY(${imgOffset}px)`
+		transform: `translateY(${imgOffset}px)`,
 	}
 
 	return (
@@ -47,15 +48,22 @@ export default function Page({ children, img, navigationButtons, id }) {
 					<div className='layout-content'>
 						{children}
 					</div>
-					<div className='banner-container'>
-						<div className='banner-mobile-overlay' />
-						<img
-							className='banner-img'
-							src={img}
-							alt='Christoffer'
-							onLoad={onImgLoad}
-							style={imgStyle}
-						/>
+
+					<div className={`banner-container ${useGallery ? 'banner-container-gallery' : ''}`}>
+						{!useGallery ? (
+							<>
+								<div className='banner-mobile-overlay' />
+								<img
+									className='banner-img'
+									src={img}
+									alt='Christoffer'
+									onLoad={onImgLoad}
+									style={imgStyle}
+								/>
+							</>
+						) : (
+							<Gallery images={img} />
+						)}
 					</div>
 
 					{showNavigationButtons() ? (

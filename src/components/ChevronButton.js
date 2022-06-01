@@ -24,14 +24,28 @@ export default function ChevronButton({ text, chevronDirection, onClick, style }
 				return (
 					<>
 						<img src='icons/chevron.svg' />
-						<p className='clickable-text'>{text}</p>
+						<p className='attention-text'>{text}</p>
 					</>
 				)
 			case 'down':
 				return (
 					<>
-						<p className='clickable-text' style={{ marginTop: 'auto' }}>{text}</p>
+						<p className='attention-text' style={{ marginTop: 'auto' }}>{text}</p>
 						<img src='icons/chevron.svg' style={{ transform: 'rotate(180deg)' }} />
+					</>
+				)
+			case 'left':
+				return (
+					<>
+						<img src='icons/chevron.svg' style={{ transform: 'rotate(-90deg)' }} />
+						<p className='attention-text' style={{ marginTop: 'auto' }}>{text}</p>
+					</>
+				)
+			case 'right':
+				return (
+					<>
+						<img src='icons/chevron.svg' style={{ transform: 'rotate(90deg)' }} />
+						<p className='attention-text' style={{ marginTop: 'auto' }}>{text}</p>
 					</>
 				)
 			default:
