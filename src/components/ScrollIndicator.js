@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /*
  * The scroll indicator seen on the left of the page.
@@ -16,6 +16,24 @@ import { useState } from 'react';
  */
 
 export default function ScrollIndicator({ posts, currentPage, setCurrentPage }) {
+
+	useEffect(() => {
+		let lastKnownScrollPosition = 0;
+		let ticking = false;
+		let el = document.getElementsByClassName('App')[0]
+		el.addEventListener('scroll', () => {
+			lastKnownScrollPosition = el.scrollTop
+
+			if (!ticking) {
+				window.setTimeout(() => {
+					setCurrentPage(Math.round(lastKnownScrollPosition / window.innerHeight) - 1)
+					ticking = false;
+				}, 50);
+
+				ticking = true;
+			}
+		})
+	})
 
 	const getScrollIndicators = (posts) => {
 		const scrollIndicators = []
@@ -51,8 +69,8 @@ export default function ScrollIndicator({ posts, currentPage, setCurrentPage }) 
 	const scrollToElement = id => {
 		const el = document.getElementById(id)
 		el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-		if (id === 'landing') setCurrentPage(-1)
-		else setCurrentPage(id.split('-')[1])
+		//if (id === 'landing') setCurrentPage(-1)
+		//else setCurrentPage(id.split('-')[1])
 	}
 
 	return (
