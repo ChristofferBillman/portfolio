@@ -73,8 +73,8 @@ body {
 
 .scroll-indicator-container {
   position: fixed;
-  top: 50%;
-  transform: translateY(50%);
+  top: 25vh;
+  transform: translateY(-60%);
   left: 1rem;
   display: flex;
   flex-direction: column;
