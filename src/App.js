@@ -15,22 +15,20 @@ import { posts } from './data/posts';
 
 export default function App() {
 
-  const [currentPage, setCurrentPage] = useState(-1);
-
-  return (
-    <div className='App'>
-      <Landing />
-      {posts.map((post, index) => {
-        return (
-          <Post
-            key={index}
-            {...post}
-            id={'post-' + index}
-          />
-        )
-      }
-      )}
-      <ScrollIndicator posts={posts} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    </div >
-  );
+	return (
+		<div className='App'>
+			<Landing />
+			{posts.map((post, index) => {
+				return (
+					<Post
+						key={index}
+						{...post}
+						id={'post-' + index}
+					/>
+				)
+			}
+			)}
+			<ScrollIndicator posts={posts} />
+		</div >
+	);
 }
