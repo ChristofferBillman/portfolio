@@ -14,7 +14,7 @@ import Gallery from './Gallery'
  * </Page>
  * 
  */
-export default function Page({ children, img, navigationButtons, id, useGallery }) {
+export default function Page({ children, img, navigationButtons, id, useGallery, galleryIsOpen, setGalleryIsOpen }) {
 
 	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
 
@@ -62,7 +62,7 @@ export default function Page({ children, img, navigationButtons, id, useGallery 
 								/>
 							</>
 						) : (
-							<Gallery images={img} />
+							<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
 						)}
 					</div>
 

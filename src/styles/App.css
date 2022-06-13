@@ -80,6 +80,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 100001;
 }
 
 .scroll-indicator {
@@ -88,6 +89,7 @@ body {
   border-radius: 50%;
   background-color: var(--gray);
   transition-duration: 200ms;
+  ;
 }
 
 .scroll-indicator-current {
@@ -134,12 +136,5 @@ body {
 }
 
 .cross-button {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: var(--gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  display: none;
 }

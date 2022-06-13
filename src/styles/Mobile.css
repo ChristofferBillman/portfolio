@@ -12,6 +12,13 @@
 	.inner-content-container {
 		width: 100%;
 		padding-top: 150px;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.inner-content-container::-webkit-scrollbar {
+		display: none;
 	}
 
 	.banner-img {
@@ -35,16 +42,42 @@
 		z-index: 1;
 	}
 
+	.gallery-content {
+		position: relative;
+		height: 300px;
+		transition: 500ms;
+	}
+
+	.gallery-controls {}
+
+	.gallery-open {
+		height: 100vh;
+		transition: 500ms;
+	}
+
 	.banner-container {
 		grid-row: 1;
 		grid-column: 1/4;
 	}
 
 	.scroll-indicator-container {
+		left: -5px;
 		display: none;
 	}
 
-	.chevron-button {
+	#scroll-indicator-title {
 		display: none;
+		opacity: 0;
+	}
+
+	.cross-button {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		background-color: var(--white);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
 	}
 }

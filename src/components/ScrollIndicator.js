@@ -80,6 +80,7 @@ export default function ScrollIndicator({ posts }) {
 			<p
 				className={`attention-text ${currentPage !== -1 ? 'opacity-0' : 'opacity-1'}`}
 				style={{ display: 'absolute', transform: 'translateX(60px) translateY(46px)' }}
+				id='scroll-indicator-title'
 			>
 				Du är här!
 			</p>

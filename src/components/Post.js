@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 import Page from './Page';
 
 /*
@@ -10,6 +12,10 @@ import Page from './Page';
  * 
  */
 export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id }) {
+
+	const [galleryIsOpen, setGalleryIsOpen] = useState(false)
+	const isMobile = useIsMobile()
+
 	return (
 		<div className='layout-grid-container' id={id}>
 			<Page
@@ -17,6 +23,8 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 				img={images}
 				navigationButtons={false}
 				useGallery={true}
+				galleryIsOpen={galleryIsOpen}
+				setGalleryIsOpen={setGalleryIsOpen}
 			>
 
 				<div className='inner-content-container'>
@@ -32,8 +40,10 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 					<p className='justify-text'>{body}</p>
 
 					<div className='row'>
-						{ghlink ? <a href={ghlink}>Källkod</a> : ''}
-						<p className='clickable-text nomargin'>Visa bilder</p>
+						{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
+						{isMobile ? (
+							<p className='clickable-text nomargin' onClick={() => setGalleryIsOpen(true)}>Visa bilder</p>
+						) : null}
 					</div>
 
 

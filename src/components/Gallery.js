@@ -4,9 +4,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import '../styles/Gallery.css'
 
 import ChevronButton from './ChevronButton'
+import CrossButton from './CrossButton'
+import useIsMobile from '../hooks/useIsMobile'
 
 
-export default function Gallery({ images }) {
+export default function Gallery({ images, isOpen, setIsOpen }) {
 
 	const [imgOpacity, setImgOpacity] = useState(0)
 	const [imgOffset, setImgOffset] = useState(40)
@@ -14,6 +16,8 @@ export default function Gallery({ images }) {
 	const [currentImg, setCurrentImg] = useState(0)
 
 	const galleryControlRef = useRef(null)
+
+	if (!useIsMobile()) setIsOpen(true)
 
 	const onImgLoad = () => {
 		setImgOpacity(1)
@@ -32,6 +36,15 @@ export default function Gallery({ images }) {
 	const onHoverOut = () => {
 		galleryControlRef.current.classList.remove('opacity-1')
 		galleryControlRef.current.classList.add('opacity-0')
+	}
+	const getContainerWidth = () => {
+		if (galleryControlRef.current === null) return
+		return galleryControlRef.current.clientWidth
+	}
+
+	const toggleGallery = () => {
+		setIsOpen(!isOpen)
+		console.log(isOpen)
 	}
 
 	const [direction, setDirection] = useState(0)
@@ -57,20 +70,41 @@ export default function Gallery({ images }) {
 	}
 
 	return (
-		<div className='gallery-container' onMouseOver={onHover} onMouseLeave={onHoverOut}>
+		<div className='gallery-container' style={isOpen ? { zIndex: 10000 } : {}} onMouseOver={onHover} onMouseLeave={onHoverOut}>
+
+			<AnimatePresence>
+				{isOpen ? (
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+					>
+						<CrossButton
+							onClick={toggleGallery}
+							style={{ position: 'absolute', right: '20px', top: '20px', zIndex: 10001 }}
+						/>
+					</motion.div>
+				) : null}
+			</AnimatePresence>
+
 			<div className='gallery-controls' ref={galleryControlRef}>
-				<ChevronButton
-					chevronDirection='left'
-					onClick={() => { getNextImg(false) }}
-					style={{ marginLeft: '1rem' }}
-				/>
-				<ChevronButton
-					chevronDirection='right'
-					onClick={() => { getNextImg(true) }}
-					style={{ marginRight: '1rem' }}
-				/>
+				{isOpen ? (
+					<>
+						<ChevronButton
+							chevronDirection='left'
+							onClick={() => { getNextImg(false) }}
+							style={{ marginLeft: '1rem' }}
+						/>
+						<ChevronButton
+							chevronDirection='right'
+							onClick={() => { getNextImg(true) }}
+							style={{ marginRight: '1rem' }}
+						/>
+					</>
+				) : null}
 			</div>
-			<div className='gallery-content'>
+			<div className={isOpen ? ' gallery-content gallery-open' : 'gallery-content'}>
+				<div className={isOpen ? '' : 'banner-mobile-overlay'} />
 				<AnimatePresence initial={false} exitBeforeEnter>
 					<motion.img
 						src={images[currentImg]}
@@ -78,18 +112,16 @@ export default function Gallery({ images }) {
 						style={imgStyle}
 						onLoad={onImgLoad}
 						key={images[currentImg]}
-						initial={{ x: -direction * 700, opacity: 0 }}
+						initial={{ x: -direction * getContainerWidth() / 2, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: direction * 700, opacity: 0 }}
+						exit={{ x: direction * getContainerWidth() / 2, opacity: 0 }}
 						transition={{
-							ease: 'easeInOut',
-							stiffness: 300,
-							damping: 20,
+							x: { type: "spring", stiffness: 300, damping: 30 },
+							opacity: { duration: 0.2 }
 						}}
 					/>
 				</AnimatePresence>
 			</div>
-
 		</div>
 	);
 }
