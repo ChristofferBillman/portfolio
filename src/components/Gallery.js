@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import '../styles/Gallery.css'
@@ -17,7 +17,11 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 
 	const galleryControlRef = useRef(null)
 
-	if (!useIsMobile()) setIsOpen(true)
+	const isMobile = useIsMobile()
+
+	useEffect(() => {
+		if (!isMobile) setIsOpen(true)
+	})
 
 	const onImgLoad = () => {
 		setImgOpacity(1)
@@ -43,8 +47,8 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 	}
 
 	const toggleGallery = () => {
-		setIsOpen(!isOpen)
 		console.log(isOpen)
+		setIsOpen(!isOpen)
 	}
 
 	const [direction, setDirection] = useState(0)
@@ -80,7 +84,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 						exit={{ opacity: 0 }}
 					>
 						<CrossButton
-							onClick={toggleGallery}
+							onClick={() => {toggleGallery()}}
 							style={{ position: 'absolute', right: '20px', top: '20px', zIndex: 10001 }}
 						/>
 					</motion.div>
@@ -104,19 +108,19 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 				) : null}
 			</div>
 			<div className={isOpen ? ' gallery-content gallery-open' : 'gallery-content'}>
-				<div className={isOpen ? '' : 'banner-mobile-overlay'} />
+				<motion.div className={isOpen ? 'displaynone' : 'banner-mobile-overlay'} />
 				<AnimatePresence initial={false} exitBeforeEnter>
 					<motion.img
 						src={images[currentImg]}
-						className='banner-img'
 						style={imgStyle}
-						onLoad={onImgLoad}
+						className='banner-img'
 						key={images[currentImg]}
-						initial={{ x: -direction * getContainerWidth() / 2, opacity: 0 }}
+						onLoad={onImgLoad}
+						initial={{ x: -direction * getContainerWidth(), /*opacity: 0*/ }}
 						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: direction * getContainerWidth() / 2, opacity: 0 }}
+						exit={{ x: direction * getContainerWidth() /*opacity: 0*/, transition: { ease: 'easeIn', duration: 0.2 } }}
 						transition={{
-							x: { type: "spring", stiffness: 300, damping: 30 },
+							x: { type: "spring", stiffness: 300, damping: 25 },
 							opacity: { duration: 0.2 }
 						}}
 					/>
