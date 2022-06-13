@@ -14,7 +14,7 @@ import Gallery from './Gallery'
  * </Page>
  * 
  */
-export default function Page({ children, img, navigationButtons, id, useGallery, galleryIsOpen, setGalleryIsOpen }) {
+export default function Page({ children, img, navigationButtons, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
 
 	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
 
@@ -35,7 +35,7 @@ export default function Page({ children, img, navigationButtons, id, useGallery,
 	return (
 		<>
 			{loaded ? (
-				<div id={id} className='layout-grid'>
+				<div id={id} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
 					{showNavigationButtons() ? (
 						<ChevronButton
 							chevronDirection='up'
@@ -45,11 +45,11 @@ export default function Page({ children, img, navigationButtons, id, useGallery,
 						/>
 					) : ''}
 
-					<div className='layout-content'>
+					<div className={contentSide === 'left' ? 'layout-content' : 'layout-content-right'}>
 						{children}
 					</div>
 
-					<div className={`banner-container ${useGallery ? 'banner-container-gallery' : ''}`}>
+					<div className={contentSide === 'left' ? 'banner-container' : 'banner-container-right'}>
 						{!useGallery ? (
 							<>
 								<div className='banner-mobile-overlay' />

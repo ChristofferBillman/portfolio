@@ -23,6 +23,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 				img={images}
 				navigationButtons={false}
 				useGallery={true}
+				contentSide='left'
 				galleryIsOpen={galleryIsOpen}
 				setGalleryIsOpen={setGalleryIsOpen}
 			>

@@ -4,6 +4,7 @@
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Post from './components/Post';
+import Page from './components/Page';
 
 import './styles/App.css';
 import './styles/Mobile.css'
