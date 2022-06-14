@@ -4,7 +4,7 @@
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Post from './components/Post';
-import Page from './components/Page';
+import About from './components/About';
 
 import './styles/App.css';
 import './styles/Mobile.css'
@@ -20,6 +20,7 @@ export default function App() {
 		<div className='App'>
 			<AppContextProvider>
 				<Landing />
+				<About/>
 				{posts.map((post, index) => {
 					return (
 						<Post
