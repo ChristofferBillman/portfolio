@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Gallery from './Gallery'
 
 /*
  * The main layout of each page. Takes up the entire viewport.
@@ -14,30 +13,18 @@ import Gallery from './Gallery'
 export default function DualColumnPage({ children, id }) {
 
 	const [loaded, setLoaded] = useState(true)
-	const [imgOpacity, setImgOpacity] = useState(0)
-	const [imgOffset, setImgOffset] = useState(40)
-
-	const onImgLoad = () => {
-		setLoaded(true)
-		setImgOpacity(1)
-		setImgOffset(0)
-	}
-	const imgStyle = {
-		opacity: imgOpacity,
-		transform: `translateY(${imgOffset}px)`,
-	}
 
 	return (
 		<>
 			{loaded ? (
 				<div id={id} className={'layout-grid-both'}>
-					
+
 					<div className={'layout-content'}>
 						{children[0]}
 					</div>
 
 					<div className={'layout-content-both'}>
-                    {children[1]}
+						{children[1]}
 					</div>
 				</div>
 			) : (

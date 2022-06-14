@@ -84,7 +84,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 						exit={{ opacity: 0 }}
 					>
 						<CrossButton
-							onClick={() => {toggleGallery()}}
+							onClick={() => { toggleGallery() }}
 							style={{ position: 'absolute', right: '20px', top: '20px', zIndex: 10001 }}
 						/>
 					</motion.div>

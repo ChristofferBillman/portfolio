@@ -44,10 +44,10 @@ export default function ScrollIndicator({ posts }) {
 			<div
 				style={{ padding: '1rem 3rem 1rem 1rem' }}
 				onClick={() => { scrollToElement('landing') }}
+				key={100}
 			>
 				<div
 					className={`scroll-indicator ${Number(currentPage) === -1 ? 'scroll-indicator-current' : ''}`}
-					key={100}
 				/>
 			</div>
 		)
@@ -57,10 +57,10 @@ export default function ScrollIndicator({ posts }) {
 				<div
 					style={{ padding: '1rem 3rem 1rem 1rem' }}
 					onClick={() => { scrollToElement(`post-${index}`) }}
+					key={index}
 				>
 					<div
 						className={`scroll-indicator ${Number(currentPage) === index ? 'scroll-indicator-current' : ''}`}
-						key={index}
 					/>
 				</div>
 			)

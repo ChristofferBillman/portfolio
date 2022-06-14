@@ -35,7 +35,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 						<h4>{year}</h4>
 					</div>
 					<div className='link-container'>
-						{tags ? tags.map(tag => <p className='attention-text'>{tag}</p>) : ''}
+						{tags ? tags.map((tag, index) => <p className='attention-text' key={index}>{tag}</p>) : ''}
 					</div>
 
 					<p className='justify-text'>{body}</p>
