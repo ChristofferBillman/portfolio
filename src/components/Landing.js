@@ -35,11 +35,10 @@ export default function Landing() {
 						LinkedIn
 					</a>
 					<a
-						href='https://github.com/ChristofferBillman'
-						target='_blank'
-						rel='noreferrer'
+						href='CV.pdf'
+						download
 					>
-						GitHub
+						Hämta CV
 					</a>
 				</div>
 
