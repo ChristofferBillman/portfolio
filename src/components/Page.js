@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import ChevronButton from './ChevronButton'
 import Gallery from './Gallery'
 
 /*
@@ -12,7 +11,7 @@ import Gallery from './Gallery'
  * </Page>
  * 
  */
-export default function Page({ children, img, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
+export default function Page({ children, img, style, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
 
 	const [loaded, setLoaded] = useState(true)
 	const [imgOpacity, setImgOpacity] = useState(0)
@@ -31,8 +30,8 @@ export default function Page({ children, img, id, useGallery, galleryIsOpen, set
 	return (
 		<>
 			{loaded ? (
-				<div id={id} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
-					
+				<div id={id} style={style} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
+
 					<div className={contentSide === 'left' ? 'layout-content' : 'layout-content-right'}>
 						{children}
 					</div>

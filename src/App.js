@@ -4,6 +4,7 @@
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Post from './components/Post';
+import Footer from './components/Footer';
 
 import './styles/App.css';
 import './styles/Mobile.css'
@@ -30,6 +31,7 @@ export default function App() {
 					)
 				}
 				)}
+				<Footer />
 				<ScrollIndicator posts={posts} />
 			</AppContextProvider>
 		</div >
