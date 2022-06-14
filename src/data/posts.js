@@ -3,7 +3,7 @@ export const posts = [
 		"name": "greetup",
 		"title": "GreetUp",
 		"subtitle": "Ett projekt",
-		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick 5 veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer.",
+		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick 5 veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer. För att bygga den här applikationen använde vi React för frontend och ASP.NET Core Web API, MySQL och Entity Framework för backend.",
 		"images": [
 			"img/greetup/promomain.png",
 			"img/greetup/promo1.png",
