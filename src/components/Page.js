@@ -4,19 +4,15 @@ import Gallery from './Gallery'
 
 /*
  * The main layout of each page. Takes up the entire viewport.
- * Takes props for the image, if to display navigation buttons, and the id of its container.
- * 
- * Note: Navigation buttons displayed but non-functional.
+ * Takes props for the image and the id of its container.
  * 
  * Usage:
- * <Page img='labplant.png' navigationButtons={false} id='id' useGallery={true}>
+ * <Page img='labplant.png' id='id' useGallery={true}>
  *     {children}
  * </Page>
  * 
  */
-export default function Page({ children, img, navigationButtons, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
-
-	const showNavigationButtons = () => navigationButtons === undefined || navigationButtons === true
+export default function Page({ children, img, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
 
 	const [loaded, setLoaded] = useState(true)
 	const [imgOpacity, setImgOpacity] = useState(0)
@@ -36,15 +32,7 @@ export default function Page({ children, img, navigationButtons, id, useGallery,
 		<>
 			{loaded ? (
 				<div id={id} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
-					{showNavigationButtons() ? (
-						<ChevronButton
-							chevronDirection='up'
-							text='Tillbaka'
-							onClick={() => { /* something in the future maybe? */ }}
-							style={{ gridColumn: 2, gridRow: 1 }}
-						/>
-					) : ''}
-
+					
 					<div className={contentSide === 'left' ? 'layout-content' : 'layout-content-right'}>
 						{children}
 					</div>
@@ -65,15 +53,6 @@ export default function Page({ children, img, navigationButtons, id, useGallery,
 							<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
 						)}
 					</div>
-
-					{showNavigationButtons() ? (
-						<ChevronButton
-							chevronDirection='down'
-							text='Nästa'
-							onClick={() => { /* something in the future maybe? */ }}
-							style={{ gridColumn: 2, gridRow: 3 }}
-						/>
-					) : ''}
 				</div>
 			) : (
 				<div className='layout-grid'>
