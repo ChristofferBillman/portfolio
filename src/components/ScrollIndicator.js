@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { scrollToElement } from '../utils/util';
 
 /*
  * The scroll indicator seen on the left of the page.
@@ -66,13 +67,6 @@ export default function ScrollIndicator({ posts }) {
 			)
 		})
 		return scrollIndicators
-	}
-
-	const scrollToElement = id => {
-		const el = document.getElementById(id)
-		el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-		//if (id === 'landing') setCurrentPage(-1)
-		//else setCurrentPage(id.split('-')[1])
 	}
 
 	return (

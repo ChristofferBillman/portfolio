@@ -5,7 +5,7 @@ import '../styles/Gallery.css'
 
 import ChevronButton from './ChevronButton'
 import CrossButton from './CrossButton'
-import useIsMobile from '../hooks/useIsMobile'
+import { isMobile } from '../utils/util'
 
 
 export default function Gallery({ images, isOpen, setIsOpen }) {
@@ -17,10 +17,8 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 
 	const galleryControlRef = useRef(null)
 
-	const isMobile = useIsMobile()
-
 	useEffect(() => {
-		if (!isMobile) setIsOpen(true)
+		if (!isMobile()) setIsOpen(true)
 	})
 
 	const onImgLoad = () => {

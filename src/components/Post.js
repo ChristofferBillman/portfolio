@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import useIsMobile from '../hooks/useIsMobile';
 import Page from './Page';
+
+import { isMobile } from '../utils/util';
 
 /*
  * A post. A wrapper for a Page, which takes props related to a post instead of children.
@@ -14,7 +15,6 @@ import Page from './Page';
 export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id }) {
 
 	const [galleryIsOpen, setGalleryIsOpen] = useState(false)
-	const isMobile = useIsMobile()
 
 	return (
 		<div className='layout-grid-container' id={id}>
@@ -42,7 +42,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 					<div className='row'>
 						{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
-						{isMobile ? (
+						{isMobile() ? (
 							<p className='clickable-text nomargin' onClick={() => setGalleryIsOpen(true)}>Visa bilder</p>
 						) : null}
 					</div>
