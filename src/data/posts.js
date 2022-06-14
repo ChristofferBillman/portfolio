@@ -46,6 +46,7 @@ export const posts = [
 	}, {
 		"name": "portfolio3",
 		"title": "Portfolio v.3",
+		"subtitle": "Fritid",
 		"body": "Den tredje försöket till en portfoliosida! Denna version kom faktiskt till, och projektet blev mycket mer ambitiöst än vad de tidigare två var! Två flugor en smäll!",
 		"images": [
 			"img/portfolio3/grafisk-profil-rosa.webp",
@@ -63,7 +64,7 @@ export const posts = [
 	}, {
 		"name": "skissteknik",
 		"title": "Rumbokningssystem",
-		"subtitle": "Skissteknik",
+		"subtitle": "En uppgift",
 		"body": "Denna uppgift var del av kursen 'Design för användarupplevelse' hos designhögskolan i Umeå. Det gick huvudsakligen ut på att lära sig hur man arbetar med wireframes och iterativa designprocesser",
 		"images": [
 			"img/skissteknik/m1.webp",
@@ -97,18 +98,9 @@ export const posts = [
 		"order": "4",
 		"year": "2020",
 	}, {
-		"name": "portfolio1",
-		"title": "Portfolio v.1",
-		"body": "Första försöket! Inte så mycket att säga här förutom att jag kom ännu kortare än vid andra försöket.",
-		"images": [
-			"img/portfolio1/preview.webp"
-		],
-		"imagePosition": "top",
-		"order": "5"
-	}, {
 		"name": "vbost",
 		"title": "Västerbottensost",
-		"subtitle": "Ett varumärkeshem",
+		"subtitle": "Ett projekt",
 		"body": "Slutprojekt i kursen design för användarupplevelse. Vi fick 4 veckor på oss att arbeta fram ett så kallat varumärkeshem till Västerbottensost.",
 		"images": [
 			"img/vbost/ostprovning.webp",
