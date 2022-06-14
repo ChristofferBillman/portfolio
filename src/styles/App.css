@@ -35,9 +35,22 @@ body {
   scroll-snap-align: start;
   background: none;
 }
+.layout-grid-both {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 4fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  height: 100vh;
+  scroll-snap-align: start;
+  background: none;
+}
 
 .layout-content {
   grid-column: 2;
+  grid-row: 2;
+  z-index: 10000;
+}
+.layout-content-both{
+  grid-column: 4;
   grid-row: 2;
   z-index: 10000;
 }

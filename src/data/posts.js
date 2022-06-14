@@ -5,6 +5,10 @@ export const posts = [
 		"subtitle": "Ett projekt",
 		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick 5 veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer.",
 		"images": [
+			"img/greetup/promomain.png",
+			"img/greetup/promo1.png",
+			"img/greetup/promo2.png",
+			"img/greetup/promo3.png",
 			"img/greetup/login-zoomedout.png",
 		],
 		"imagePosition": "right",
@@ -24,7 +28,9 @@ export const posts = [
 		"body": "Detta var slutprojektet i kursen Design och Tjänsteutveckling för IoT vid Umeå Universitet. Kursen handlade till stor del om att bygga egna system och experimentera med mikrokontrollers och sensorer. I projektet byggde jag tillsammans med tre andra ett system för att övervaka och vattna krukväxter med hjälp av en ESP-32, ett urval sensorer och en Raspberry Pi 4.",
 		"images": [
 			"img/lab-plant/setup.jpeg",
-			"img/lab-plant/readme_img.png",
+			"img/lab-plant/overview.png",
+			"img/lab-plant/details.png",
+			"img/lab-plant/details2.png",
 			"img/lab-plant/soilsensor.jpeg",
 		],
 		"imagePosition": "right",
@@ -44,11 +50,15 @@ export const posts = [
 		"images": [
 			"img/portfolio3/grafisk-profil-rosa.webp",
 			"img/portfolio3/grafisk-profil.webp",
-			"img/portfolio3/preview.webp"
 		],
 		"imagePosition": "right",
 		"order": "2",
 		"ghlink": "https://github.com/ChristofferBillman/Portfolio3-Deployed",
+		"tags": [
+			"MongoDB",
+			"Express",
+			"TypeScript"
+		],
 		"year": "2021"
 	}, {
 		"name": "skissteknik",
@@ -67,6 +77,11 @@ export const posts = [
 		],
 		"imagePosition": "top",
 		"order": "3",
+		"tags": [
+			"Figma",
+			"Design",
+			"Wireframes",
+		],
 		"year": "2021",
 	}, {
 		"name": "portfolio2",
