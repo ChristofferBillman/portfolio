@@ -30,6 +30,8 @@ export default function Footer() {
 					<h4 className='white nomargin'>LinkedIn</h4>
 					<p className='white nomargin'>Christoffer Billman</p>
 				</div>
+
+				<p style={{ marginTop: '3em' }} className='white nomargin'>© Christoffer Billman 2022</p>
 			</div>
 		</div>
 	return (
