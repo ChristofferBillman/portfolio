@@ -10,21 +10,21 @@ import { useState } from 'react'
  * </Page>
  * 
  */
-export default function DualColumnPage({ children, id }) {
+export default function DualColumnPage({ leftContent, rightContent, id, style }) {
 
 	const [loaded, setLoaded] = useState(true)
 
 	return (
 		<>
 			{loaded ? (
-				<div id={id} className={'layout-grid-both'}>
+				<div id={id} style={style} className={'layout-grid-both'}>
 
 					<div className={'layout-content'}>
-						{children[0]}
+						{leftContent}
 					</div>
 
 					<div className={'layout-content-both'}>
-						{children[1]}
+						{rightContent}
 					</div>
 				</div>
 			) : (
