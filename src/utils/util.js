@@ -4,5 +4,5 @@ export const scrollToElement = id => {
 }
 
 export function isMobile() {
-	return window.innerHeight < 768
+	return window.innerWidth < 768
 }
