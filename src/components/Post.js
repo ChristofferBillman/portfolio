@@ -21,7 +21,6 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 			<Page
 				name={name}
 				img={images}
-				navigationButtons={false}
 				useGallery={true}
 				contentSide='left'
 				galleryIsOpen={galleryIsOpen}
