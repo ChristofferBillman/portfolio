@@ -1,0 +1,8 @@
+{
+  "short_name": "Portfolio",
+  "name": "Christoffer Billman Portfolio v.4",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
