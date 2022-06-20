@@ -66,6 +66,17 @@ export default function ScrollIndicator({ posts }) {
 				</div>
 			)
 		})
+		scrollIndicators.push(
+			<div
+				style={{ padding: '1rem 3rem 1rem 1rem' }}
+				onClick={() => { scrollToElement('footer') }}
+				key={101}
+			>
+				<div
+					className={`scroll-indicator ${Number(currentPage) === posts.length ? 'scroll-indicator-current' : ''}`}
+				/>
+			</div>
+		)
 		return scrollIndicators
 	}
 

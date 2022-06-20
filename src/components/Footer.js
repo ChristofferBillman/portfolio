@@ -9,7 +9,7 @@ import '../styles/Footer.css'
 
 export default function Footer() {
 	return (
-		<Page contentSide='left' style={{ background: 'var(--black)' }}>
+		<Page contentSide='left' style={{ background: 'var(--black)' }} id='footer'>
 			<div className='footer-content'>
 				<div>
 					<h1 className='white'>Nu tog det slut</h1>
