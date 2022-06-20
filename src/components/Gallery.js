@@ -111,14 +111,14 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 					<motion.img
 						src={images[currentImg]}
 						style={imgStyle}
-						className='banner-img'
+						className='gallery-img'
 						key={images[currentImg]}
 						onLoad={onImgLoad}
 						initial={{ x: -direction * getContainerWidth(), /*opacity: 0*/ }}
 						animate={{ x: 0, opacity: 1 }}
 						exit={{ x: direction * getContainerWidth() /*opacity: 0*/, transition: { ease: 'easeIn', duration: 0.2 } }}
 						transition={{
-							x: { type: "spring", stiffness: 300, damping: 25 },
+							x: { type: "spring", stiffness: 300, damping: 30 },
 							opacity: { duration: 0.2 }
 						}}
 					/>
