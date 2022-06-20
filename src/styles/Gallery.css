@@ -11,6 +11,7 @@
 
 .gallery-content {
 	position: relative;
+	overflow: hidden;
 }
 
 .gallery-controls {
