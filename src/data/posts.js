@@ -82,19 +82,6 @@ export const posts = [
 		],
 		"year": "2021",
 	}, {
-		"name": "portfolio2",
-		"title": "Portfolio v.2",
-		"body": "Andra försöket till en portfoliosida - gick sådär. Blev aldrig riktigt nöjd med designen så det projektet kom som längst med Hi-Fi prototyper i Adobe XD.",
-		"images": [
-			"img/portfolio2/cards.webp",
-			"img/portfolio2/desktop.webp",
-			"img/portfolio2/mobile.webp",
-			"img/portfolio2/menu.webp"
-		],
-		"imagePosition": "top",
-		"order": "4",
-		"year": "2020",
-	}, {
 		"name": "vbost",
 		"title": "Västerbottensost",
 		"subtitle": "Ett projekt",
