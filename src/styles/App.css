@@ -107,7 +107,7 @@ body {
   align-items: center;
 }
 
-.scroll-indicator-container {
+.scroll-indicator-container, .scroll-indicator-container-dark{
   position: fixed;
   top: 25vh;
   transform: translateY(-60%);
@@ -118,6 +118,13 @@ body {
   align-items: center;
   z-index: 100001;
   cursor: pointer;
+}
+
+.scroll-indicator-container-dark .scroll-indicator{
+  background: var(--light-black);
+}
+.scroll-indicator-container-dark .scroll-indicator-current{
+  background: var(--white);
 }
 
 .scroll-indicator {
