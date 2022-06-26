@@ -13,7 +13,7 @@ import { scrollTo } from '../utils/util';
  */
 
 // In ms.
-const UPDATE_INTERVAL = 50;
+const UPDATE_INTERVAL = 100;
 // In px. Conversion from rem to px.
 const PAGE_MARGIN = 6 * 16;
 
@@ -67,7 +67,10 @@ export default function ScrollIndicator({length}) {
 	}
 
 	return (
-		<div className='scroll-indicator-container fadeIn stagger-1'>
+		<div className={Number(currentPage) === length - 1 ? 
+			'scroll-indicator-container-dark fadeIn stagger-1' :
+			'scroll-indicator-container fadeIn stagger-1'}
+		>
 			<p
 				// If on the first page, display this text.
 				className={`attention-text ${currentPage === 0 ? 'opacity-1' : 'opacity-0'}`}
