@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+// Import LazyMotion, domAnimation and m to reduce bundle size.
+// Saves about 11 kB.
+import { LazyMotion, domAnimation, AnimatePresence, m as motion } from 'framer-motion'
 
 import '../styles/Gallery.css'
 
@@ -74,6 +76,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 	return (
 		<div className='gallery-container' style={isOpen ? { zIndex: 10000 } : {}} onMouseOver={onHover} onMouseLeave={onHoverOut}>
 
+		<LazyMotion strict features={domAnimation}>
 			<AnimatePresence>
 				{isOpen ? (
 					<motion.div
@@ -124,6 +127,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 					/>
 				</AnimatePresence>
 			</div>
+			</LazyMotion>
 		</div>
 	);
 }
