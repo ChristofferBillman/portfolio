@@ -11,8 +11,6 @@ export const posts = [
 			"img/greetup/promo3.png",
 			"img/greetup/login-zoomedout.png",
 		],
-		"imagePosition": "right",
-		"order": "1",
 		"ghlink": "https://github.com/ChristofferBillman/ProjektIoT",
 		"tags": [
 			"React",
@@ -33,8 +31,6 @@ export const posts = [
 			"img/lab-plant/details2.png",
 			"img/lab-plant/soilsensor.jpeg",
 		],
-		"imagePosition": "right",
-		"order": "1",
 		"ghlink": "https://github.com/ChristofferBillman/ProjektIoT",
 		"tags": [
 			"IoT",
@@ -52,8 +48,6 @@ export const posts = [
 			"img/portfolio3/grafisk-profil-rosa.webp",
 			"img/portfolio3/grafisk-profil.webp",
 		],
-		"imagePosition": "right",
-		"order": "2",
 		"ghlink": "https://github.com/ChristofferBillman/Portfolio3-Deployed",
 		"tags": [
 			"MongoDB",
@@ -63,7 +57,7 @@ export const posts = [
 		"year": "2021"
 	}, {
 		"name": "skissteknik",
-		"title": "Rumbokningssystem",
+		"title": "Rumsbokning",
 		"subtitle": "En uppgift",
 		"body": "Denna uppgift var del av kursen 'Design för användarupplevelse' hos designhögskolan i Umeå. Det gick huvudsakligen ut på att lära sig hur man arbetar med wireframes och iterativa designprocesser",
 		"images": [
@@ -73,8 +67,6 @@ export const posts = [
 			"img/skissteknik/page4.png",
 			"img/skissteknik/page5.png",
 		],
-		"imagePosition": "top",
-		"order": "3",
 		"tags": [
 			"Figma",
 			"Design",
@@ -93,7 +85,5 @@ export const posts = [
 			"img/vbost/desktop2.webp",
 			"img/vbost/mobile.webp"
 		],
-		"imagePosition": "right",
-		"order": "6",
 		"year": "2021"
 	}]
