@@ -76,57 +76,57 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 	return (
 		<div className='gallery-container' style={isOpen ? { zIndex: 10000 } : {}} onMouseOver={onHover} onMouseLeave={onHoverOut}>
 
-		<LazyMotion strict features={domAnimation}>
-			<AnimatePresence>
-				{isOpen ? (
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-					>
-						<CrossButton
-							onClick={() => { toggleGallery() }}
-							style={{ position: 'absolute', right: '20px', top: '20px', zIndex: 10001 }}
-						/>
-					</motion.div>
-				) : null}
-			</AnimatePresence>
-
-			<div className='gallery-controls' ref={galleryControlRef}>
-				{isOpen ? (
-					<>
-						<ChevronButton
-							chevronDirection='left'
-							onClick={() => { getNextImg(false) }}
-							style={{ marginLeft: '1rem' }}
-						/>
-						<ChevronButton
-							chevronDirection='right'
-							onClick={() => { getNextImg(true) }}
-							style={{ marginRight: '1rem' }}
-						/>
-					</>
-				) : null}
-			</div>
-			<div className={isOpen ? ' gallery-content gallery-open' : 'gallery-content'}>
-				<motion.div className={isOpen ? 'displaynone' : 'banner-mobile-overlay'} />
-				<AnimatePresence initial={false} exitBeforeEnter>
-					<motion.img
-						src={images[currentImg]}
-						style={imgStyle}
-						className='gallery-img'
-						key={images[currentImg]}
-						onLoad={onImgLoad}
-						initial={{ x: -direction * getContainerWidth(), /*opacity: 0*/ }}
-						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: direction * getContainerWidth() /*opacity: 0*/, transition: { ease: 'easeIn', duration: 0.2 } }}
-						transition={{
-							x: { type: "spring", stiffness: 300, damping: 30 },
-							opacity: { duration: 0.2 }
-						}}
-					/>
+			<LazyMotion strict features={domAnimation}>
+				<AnimatePresence>
+					{isOpen ? (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+						>
+						</motion.div>
+					) : null}
 				</AnimatePresence>
-			</div>
+
+				<div className='gallery-controls' ref={galleryControlRef}>
+					{isOpen ? (
+						<>
+							<CrossButton
+								onClick={() => { toggleGallery() }}
+								style={{ position: 'absolute', right: '20px', top: '20px', zIndex: 10001 }}
+							/>
+							<ChevronButton
+								chevronDirection='left'
+								onClick={() => { getNextImg(false) }}
+								style={{ marginLeft: '1rem' }}
+							/>
+							<ChevronButton
+								chevronDirection='right'
+								onClick={() => { getNextImg(true) }}
+								style={{ marginRight: '1rem' }}
+							/>
+						</>
+					) : null}
+				</div>
+				<div className={isOpen ? ' gallery-content gallery-open' : 'gallery-content'}>
+					<motion.div className={isOpen ? 'displaynone' : 'banner-mobile-overlay'} />
+					<AnimatePresence initial={false} exitBeforeEnter>
+						<motion.img
+							src={images[currentImg]}
+							style={imgStyle}
+							className='gallery-img'
+							key={images[currentImg]}
+							onLoad={onImgLoad}
+							initial={{ x: -direction * getContainerWidth(), /*opacity: 0*/ }}
+							animate={{ x: 0, opacity: 1 }}
+							exit={{ x: direction * getContainerWidth() /*opacity: 0*/, transition: { ease: 'easeIn', duration: 0.2 } }}
+							transition={{
+								x: { type: "spring", stiffness: 300, damping: 30 },
+								opacity: { duration: 0.2 }
+							}}
+						/>
+					</AnimatePresence>
+				</div>
 			</LazyMotion>
 		</div>
 	);

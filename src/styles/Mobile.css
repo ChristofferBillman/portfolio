@@ -4,6 +4,11 @@
 		grid-template-rows: 250px 5fr;
 	}
 
+	.layout-grid-container {
+		min-height: 100vh;
+		padding-bottom: 40vh;
+	}
+
 	.layout-grid-right {
 		grid-template-columns: 40px auto 40px;
 		grid-template-rows: 250px 5fr;
@@ -20,11 +25,10 @@
 	}
 
 	.inner-content-container {
-		width: 100%;
+		width: fit-content;
 		padding-top: 150px;
 		overflow-y: scroll;
 		scrollbar-width: none;
-		-ms-overflow-style: none;
 	}
 
 	.inner-content-container::-webkit-scrollbar {
@@ -58,9 +62,14 @@
 		transition: 500ms;
 	}
 
-	.gallery-controls {}
+	.gallery-controls {
+		position: fixed;
+	}
 
 	.gallery-open {
+		position: fixed;
+		top: 0;
+		left: 0;
 		height: 100vh;
 		transition: 500ms;
 	}
