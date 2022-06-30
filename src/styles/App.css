@@ -69,8 +69,8 @@ body {
 
 .layout-grid-container {
   margin-top: 6rem;
-  scroll-snap-align: end;
-  overflow: hidden;
+  scroll-snap-align: start;
+  overflow-y: scroll;
 }
 
 .banner-img {
@@ -107,7 +107,8 @@ body {
   align-items: center;
 }
 
-.scroll-indicator-container, .scroll-indicator-container-dark{
+.scroll-indicator-container,
+.scroll-indicator-container-dark {
   position: fixed;
   top: 25vh;
   transform: translateY(-60%);
@@ -120,10 +121,11 @@ body {
   cursor: pointer;
 }
 
-.scroll-indicator-container-dark .scroll-indicator{
+.scroll-indicator-container-dark .scroll-indicator {
   background: var(--light-black);
 }
-.scroll-indicator-container-dark .scroll-indicator-current{
+
+.scroll-indicator-container-dark .scroll-indicator-current {
   background: var(--white);
 }
 

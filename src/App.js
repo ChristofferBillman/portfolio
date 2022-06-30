@@ -19,10 +19,10 @@ export default function App() {
 	return (
 		<div className='App'>
 			<AppContextProvider>
-				<Landing/>
-				{posts.map((post, index) => <Post key={index} {...post}/>)}
-				<Footer/>
-				<ScrollIndicator length={posts.length + 2}/>
+				<Landing />
+				{posts.map((post, index) => <Post key={index} {...post} />)}
+				<Footer />
+				<ScrollIndicator length={posts.length + 2} />
 			</AppContextProvider>
 		</div >
 	);
