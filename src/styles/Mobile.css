@@ -6,13 +6,19 @@
 
 	.layout-grid-container {
 		min-height: 100vh;
-		padding-bottom: 40vh;
+		padding-bottom: 15rem;
 	}
 
 	.layout-grid-right {
 		grid-template-columns: 40px auto 40px;
 		grid-template-rows: 250px 5fr;
 	}
+
+	.layout-grid-both {
+		grid-template-columns: 40px auto 40px;
+		grid-template-rows: 250px 5fr;
+	}
+
 
 	.layout-content {
 		grid-column: 2;
@@ -86,6 +92,13 @@
 
 	.scroll-indicator-container {
 		left: -5px;
+		height: 50vh;
+		display: none;
+	}
+
+	.scroll-indicator-container-dark {
+		left: -5px;
+		height: 50vh;
 		display: none;
 	}
 
@@ -103,5 +116,9 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
+	}
+
+	.contact-section {
+		padding-bottom: 6rem;
 	}
 }
