@@ -70,7 +70,6 @@ body {
 .layout-grid-container {
   margin-top: 6rem;
   scroll-snap-align: start;
-  overflow-y: scroll;
 }
 
 .banner-img {
