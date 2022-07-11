@@ -8,5 +8,18 @@ export const scrollTo = pixelsFromTop => {
 }
 
 export function isMobile() {
-	return window.innerWidth < 768
+	let isStandalone = window.navigator.standalone
+	let ua = window.navigator.userAgent.toLowerCase()
+	let isSafari = /safari/.test(ua)
+	let isMobile = /Android|webOS|iPhone|iPod/i.test(ua)
+
+	if (isMobile) {
+		if (!isStandalone && !isSafari) {
+			// Is iOS WKWebView or UIWebView
+			// Only for Instagram and Facebook in-app browsers
+			return true
+		}
+		return window.innerWidth < 768
+	}
+	return false
 }
