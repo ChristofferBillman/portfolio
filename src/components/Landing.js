@@ -10,7 +10,7 @@ import { isMobile } from '../utils/util'
 
 export default function Landing() {
 	return (
-		<div className='layout-grid-container'>
+		<div>
 			<Page img='landing-img.png' navigationButtons={false} id='landing' useGallery={false} contentSide='left'>
 				<div className='inner-content-container'>
 
