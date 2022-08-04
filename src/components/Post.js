@@ -12,7 +12,7 @@ import { isMobile } from '../utils/util';
  * Where post is an object with the props.
  * 
  */
-export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id }) {
+export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id, link }) {
 
 	const [galleryIsOpen, setGalleryIsOpen] = useState(false)
 
@@ -41,6 +41,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 					<div className='row'>
 						{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
+						{link ? <a href={link} target='__blank'>Besök webbplats</a> : ''}
 						{isMobile() ? (
 							<p className='clickable-text nomargin' onClick={() => setGalleryIsOpen(true)}>Visa bilder</p>
 						) : null}

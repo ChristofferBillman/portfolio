@@ -1,5 +1,22 @@
 export const posts = [
 	{
+		"name": "trip-cost-calculator",
+		"title": "Reseräknaren",
+		"subtitle": "Ett verktyg",
+		"body": "Ett verktyg för att räkna ut hur mycket en bilresa kostar. En grej som jag gjorde på fritiden under sommaren 2022.",
+		"images": [
+			"img/trip-cost-calculator/page1.png",
+		],
+		"ghlink": "https://github.com/ChristofferBillman/trip-cost-utility",
+		"link": "https://trip.christofferbillman.se",
+		"tags": [
+			"React",
+			"TypeScript",
+			"CSS"
+		],
+		"year": "2022",
+	},
+	{
 		"name": "greetup",
 		"title": "GreetUp",
 		"subtitle": "Ett projekt",
