@@ -49,7 +49,6 @@ body {
 .layout-content {
   grid-column: 2;
   grid-row: 2;
-  z-index: 10000;
 }
 
 .layout-content-both {
