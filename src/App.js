@@ -2,7 +2,7 @@
  * Copyright (c) 2022 Christoffer Billman. All rights reserved.
 */
 import Landing from './components/Landing';
-import ScrollIndicator from './components/ScrollIndicator';
+import ScrollIndicator from './components/ScrollIndicatorNew';
 import Footer from './components/Footer';
 import Post from './components/Post';
 
@@ -13,16 +13,32 @@ import './styles/Type.css';
 import AppContextProvider from './contexts/AppContext'
 
 import { posts } from './data/posts';
+import { useRef } from 'react';
 
 export default function App() {
 
+	const appRef = useRef(null)
+
 	return (
-		<div className='App'>
+		<div className='App' ref={appRef}>
 			<AppContextProvider>
 				<Landing />
 				{posts.map((post, index) => <Post key={index} {...post} />)}
 				<Footer />
-				<ScrollIndicator length={posts.length + 2} />
+
+				<div style={{
+					position: 'fixed',
+					top: '50vh',
+					transform: 'translateY(-50%)',
+					left: '1rem'
+				}}>
+					<ScrollIndicator
+						length={posts.length + 2}
+						orientation='vertical'
+						viewRef={appRef}
+						offset={6 * 16}
+					/>
+				</div>
 			</AppContextProvider>
 		</div >
 	);

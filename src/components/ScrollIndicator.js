@@ -17,7 +17,7 @@ const UPDATE_INTERVAL = 100;
 // In px. Conversion from rem to px.
 const PAGE_MARGIN = 6 * 16;
 
-export default function ScrollIndicator({length}) {
+export default function ScrollIndicator({ length }) {
 
 	const [currentPage, setCurrentPage] = useState(0);
 
@@ -44,7 +44,7 @@ export default function ScrollIndicator({length}) {
 	const getScrollIndicators = () => {
 		const scrollIndicators = []
 
-		for(let i = 0; i < length; i++) {
+		for (let i = 0; i < length; i++) {
 			scrollIndicators.push(
 				<div
 					style={{ padding: '1rem 3rem 1rem 1rem' }}
@@ -52,7 +52,7 @@ export default function ScrollIndicator({length}) {
 						// i-1 on the page margin because margin is on top,
 						// and the landing page does not have this margin.
 						// i.e. the first page is at 0px.
-						scrollTo(i * window.innerHeight + (i-1) * PAGE_MARGIN )
+						scrollTo(i * window.innerHeight + (i - 1) * PAGE_MARGIN)
 						setCurrentPage(i)
 					}}
 					key={i}
@@ -61,13 +61,14 @@ export default function ScrollIndicator({length}) {
 						className={`scroll-indicator ${Number(currentPage) === i ? 'scroll-indicator-current' : ''}`}
 					/>
 				</div>
-			)}
+			)
+		}
 
 		return scrollIndicators
 	}
 
 	return (
-		<div className={Number(currentPage) === length - 1 ? 
+		<div className={Number(currentPage) === length - 1 ?
 			'scroll-indicator-container-dark fadeIn stagger-1' :
 			'scroll-indicator-container fadeIn stagger-1'}
 		>

@@ -105,7 +105,7 @@ body {
   align-items: center;
 }
 
-.scroll-indicator-container,
+/*.scroll-indicator-container,
 .scroll-indicator-container-dark {
   position: fixed;
   top: 25vh;
@@ -125,6 +125,9 @@ body {
 
 .scroll-indicator-container-dark .scroll-indicator-current {
   background: var(--white);
+}*/
+.scroll-indicator-container {
+  z-index: 1000;
 }
 
 .scroll-indicator {
@@ -133,7 +136,6 @@ body {
   border-radius: 50%;
   background-color: var(--gray);
   transition-duration: 200ms;
-  ;
 }
 
 .scroll-indicator-current {
