@@ -2,9 +2,18 @@ export const scrollToElement = id => {
 	const el = document.getElementById(id)
 	el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
-export const scrollTo = pixelsFromTop => {
-	const app = document.getElementsByClassName('App')[0]
-	app.scroll({ top: pixelsFromTop, behavior: 'smooth' })
+export const scrollTo = (pixelsFromStart, viewRef, direction) => {
+	switch (direction) {
+		case 'vertical':
+			viewRef.current.scrollTo({ top: pixelsFromStart, behavior: 'smooth' })
+			break
+		case 'horizontal':
+			viewRef.current.scrollTo({ left: pixelsFromStart, behavior: 'smooth' })
+			break
+		default:
+			throw new Error('Invalid value ' + direction + ' of parameter direction.')
+	}
+
 }
 
 export function isMobile() {
