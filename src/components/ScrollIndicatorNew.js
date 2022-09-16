@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react"
+import { useStateWithCallbackLazy } from "use-state-with-callback";
 import { scrollTo } from '../utils/util';
 
-const UPDATE_INTERVAL = 1000;
+const UPDATE_INTERVAL = 200;
 
 export default function ScrollIndicator({ length, orientation, viewRef, offset }) {
 
 	if (offset === undefined) offset = 0
 
-	const [currentPage, setCurrentPage] = useState(0)
+	const [currentPage, setCurrentPage] = useStateWithCallbackLazy(0)
 
-	// Runs on currentPage change.
-	useEffect(() => {
-		let scrollDistance = 0;
-		if (orientation === 'vertical') {
-			scrollDistance = viewRef.current.clientHeight * currentPage + offset
-		}
-		else {
-			scrollDistance = viewRef.current.clientWidth * currentPage + offset
-		}
-		scrollTo(scrollDistance, viewRef, orientation)
-	}, [currentPage, offset, orientation, viewRef])
-
+	const handlePageChange = i => {
+		setCurrentPage(i, currentPage => {
+			let scrollDistance = 0
+			if (orientation === 'vertical') {
+				scrollDistance = viewRef.current.clientHeight * currentPage + offset
+			}
+			else {
+				scrollDistance = viewRef.current.clientWidth * currentPage + offset
+			}
+			scrollTo(scrollDistance, viewRef, orientation)
+		})
+	}
+	
 	// Runs on first render.
 	useEffect(() => {
 		let lastKnownScrollPosition = 0;
@@ -57,12 +59,15 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset }
 				<div
 					key={i}
 					style={{ padding: '1rem 1rem 1rem 1rem' }}
-					onClick={() => setCurrentPage(i)}
+					onClick={() => handlePageChange(i)}
 				>
 					<div
 						className={
 							`scroll-indicator ${Number(currentPage) === i ?
-								'scroll-indicator-current' :
+								orientation === 'vertical' ?
+								'scroll-indicator-current-vertical':
+								'scroll-indicator-current-horizontal'
+								 :
 								''
 							}`}
 					/>
