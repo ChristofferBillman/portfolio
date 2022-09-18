@@ -109,6 +109,13 @@ body {
 
 .scroll-indicator-container {
   z-index: 1000;
+  border-radius: 100px;
+  transition-duration: 200ms;
+}
+
+.scroll-indicator-container:hover {
+  padding: 1rem;
+  transition-duration: 200ms;
 }
 
 .scroll-indicator {

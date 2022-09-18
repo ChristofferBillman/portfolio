@@ -15,11 +15,20 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 					onClick={() => { setIsOpen(!isOpen) }}
 					style={{ position: 'absolute', right: '20px', top: '20px', visibility: isOpen ? 'visible' : 'hidden' }}
 				/>
-				<div style={{ position: 'absolute', bottom: '1rem' }}>
+				<div style={{
+					position: 'absolute',
+					bottom: '4rem',
+					display: 'flex',
+					justifyContent: 'center',
+					width: '100%',
+				}}>
 					<ScrollIndicator
 						length={images.length}
 						orientation='horizontal'
 						viewRef={galleryRef}
+						style={{
+							backgroundColor: 'rgba(255,255,255)',
+						}}
 					/>
 				</div>
 			</div>

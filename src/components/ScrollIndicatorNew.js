@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 import { scrollTo } from '../utils/util';
 
-const UPDATE_INTERVAL = 200;
+const UPDATE_INTERVAL = 1000;
 
-export default function ScrollIndicator({ length, orientation, viewRef, offset }) {
+export default function ScrollIndicator({ length, orientation, viewRef, offset, style, onHover }) {
 
 	if (offset === undefined) offset = 0
 
@@ -22,7 +22,7 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset }
 			scrollTo(scrollDistance, viewRef, orientation)
 		})
 	}
-	
+
 	// Runs on first render.
 	useEffect(() => {
 		let lastKnownScrollPosition = 0;
@@ -49,7 +49,7 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset }
 				ticking = true;
 			}
 		})
-	}, [orientation, viewRef])
+	}, [orientation, viewRef, setCurrentPage])
 
 	const getScrollIndicators = () => {
 		const scrollIndicators = []
@@ -65,9 +65,9 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset }
 						className={
 							`scroll-indicator ${Number(currentPage) === i ?
 								orientation === 'vertical' ?
-								'scroll-indicator-current-vertical':
-								'scroll-indicator-current-horizontal'
-								 :
+									'scroll-indicator-current-vertical' :
+									'scroll-indicator-current-horizontal'
+								:
 								''
 							}`}
 					/>
@@ -84,7 +84,9 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset }
 				orientation === 'vertical' ?
 					'scroll-indicator-container' :
 					'scroll-indicator-container row'
-			}>
+			}
+			style={style}
+		>
 			{getScrollIndicators()}
 		</div>
 	)

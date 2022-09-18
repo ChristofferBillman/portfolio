@@ -26,19 +26,19 @@ export default function App() {
 				{posts.map((post, index) => <Post key={index} {...post} />)}
 				<Footer />
 
-				<div style={{
-					position: 'fixed',
-					top: '50vh',
-					transform: 'translateY(-50%)',
-					left: '1rem'
-				}}>
-					<ScrollIndicator
-						length={posts.length + 2}
-						orientation='vertical'
-						viewRef={appRef}
-						offset={6 * 16}
-					/>
-				</div>
+				<ScrollIndicator
+					length={posts.length + 2}
+					orientation='vertical'
+					viewRef={appRef}
+					offset={6 * 16}
+					style={{
+						position: 'fixed',
+						top: '50vh',
+						transform: 'translateY(-50%)',
+						left: '1rem',
+						padding: '1rem'
+					}}
+				/>
 			</AppContextProvider>
 		</div >
 	);
