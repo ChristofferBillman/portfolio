@@ -18,32 +18,32 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset, 
 		viewRef.current.addEventListener('scroll', () => {
 			if (orientation === 'vertical') {
 				lastKnownScrollPosition = viewRef.current.scrollTop
-				widthOrHeight = viewRef.current.clientHeight
+				widthOrHeight = viewRef.current.clientHeight + offset
 			}
 			else {
 				lastKnownScrollPosition = viewRef.current.scrollLeft
-				widthOrHeight = viewRef.current.clientWidth
+				widthOrHeight = viewRef.current.clientWidth + offset
 			}
 
 			// since the scroll event fires very often, we need to debounce it.
 			if (!ticking) {
 				window.setTimeout(() => {
-					setCurrentPage(Math.floor(lastKnownScrollPosition / widthOrHeight))
+					setCurrentPage(Math.round(lastKnownScrollPosition / widthOrHeight))
 					ticking = false;
 				}, UPDATE_INTERVAL);
 
 				ticking = true;
 			}
 		})
-	}, [orientation, viewRef, setCurrentPage])
+	}, [orientation, viewRef, offset, setCurrentPage])
 
 	const handlePageChange = nextPage => {
 		let scrollDistance = 0
 		if (orientation === 'vertical') {
-			scrollDistance = viewRef.current.clientHeight * nextPage + offset
+			scrollDistance = (viewRef.current.clientHeight + offset) * nextPage
 		}
 		else {
-			scrollDistance = viewRef.current.clientWidth * nextPage + offset
+			scrollDistance = (viewRef.current.clientWidth + offset) * nextPage
 		}
 		scrollTo(scrollDistance, viewRef, orientation)
 	}
