@@ -39,7 +39,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 					<p className='justify-text'>{body}</p>
 
-					<div className='row'>
+					<div className='row gap-40'>
 						{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
 						{link ? <a href={link} target='__blank'>Besök webbplats</a> : ''}
 						{isMobile() ? (

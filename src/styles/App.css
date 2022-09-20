@@ -148,7 +148,10 @@ body {
 
 .row {
   display: flex;
-  gap: 40px;
+}
+
+.gap-40 {
+  gap: 40px
 }
 
 .chevron-button {

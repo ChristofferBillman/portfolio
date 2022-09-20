@@ -55,7 +55,10 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset, 
 			scrollIndicators.push(
 				<div
 					key={i}
-					style={{ padding: '1rem 1rem 1rem 1rem' }}
+					style={{
+						padding: '1rem 1rem 1rem 1rem',
+						WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'
+					}}
 					onClick={() => handlePageChange(i)}
 				>
 					<div
