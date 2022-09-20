@@ -1,27 +1,13 @@
-import { useEffect } from "react"
-import { useStateWithCallbackLazy } from "use-state-with-callback";
+import { useState, useEffect } from "react"
 import { scrollTo } from '../utils/util';
 
-const UPDATE_INTERVAL = 1000;
+const UPDATE_INTERVAL = 1;
 
-export default function ScrollIndicator({ length, orientation, viewRef, offset, style, onHover }) {
+export default function ScrollIndicator({ length, orientation, viewRef, offset, style }) {
 
 	if (offset === undefined) offset = 0
 
-	const [currentPage, setCurrentPage] = useStateWithCallbackLazy(0)
-
-	const handlePageChange = i => {
-		setCurrentPage(i, currentPage => {
-			let scrollDistance = 0
-			if (orientation === 'vertical') {
-				scrollDistance = viewRef.current.clientHeight * currentPage + offset
-			}
-			else {
-				scrollDistance = viewRef.current.clientWidth * currentPage + offset
-			}
-			scrollTo(scrollDistance, viewRef, orientation)
-		})
-	}
+	const [currentPage, setCurrentPage] = useState(0)
 
 	// Runs on first render.
 	useEffect(() => {
@@ -50,6 +36,17 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset, 
 			}
 		})
 	}, [orientation, viewRef, setCurrentPage])
+
+	const handlePageChange = nextPage => {
+		let scrollDistance = 0
+		if (orientation === 'vertical') {
+			scrollDistance = viewRef.current.clientHeight * nextPage + offset
+		}
+		else {
+			scrollDistance = viewRef.current.clientWidth * nextPage + offset
+		}
+		scrollTo(scrollDistance, viewRef, orientation)
+	}
 
 	const getScrollIndicators = () => {
 		const scrollIndicators = []
