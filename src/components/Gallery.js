@@ -28,6 +28,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 						viewRef={galleryRef}
 						style={{
 							backgroundColor: 'rgba(255,255,255)',
+							boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)'
 						}}
 					/>
 				</div>

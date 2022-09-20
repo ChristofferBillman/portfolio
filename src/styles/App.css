@@ -110,12 +110,14 @@ body {
 .scroll-indicator-container {
   z-index: 1000;
   border-radius: 100px;
-  transition-duration: 200ms;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0, .98, .28, .99);
 }
 
 .scroll-indicator-container:hover {
   padding: 1rem;
-  transition-duration: 200ms;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0, 1.67, .44, 1.02);
 }
 
 .scroll-indicator {
