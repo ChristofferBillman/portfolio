@@ -1,45 +1,52 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react"
 import { scrollTo } from '../utils/util';
 
-/*
- * The scroll indicator seen on the left of the page.
- * When dots are clicked, the page scrolls window.innerHeight times the # dot clicked.
- * 
- * Usage:
- * <ScrollIndicator length={5}/>
- * 
- * Props:
- * length: the number of dots shown on the indicator
- */
+const UPDATE_INTERVAL = 1;
 
-// In ms.
-const UPDATE_INTERVAL = 100;
-// In px. Conversion from rem to px.
-const PAGE_MARGIN = 6 * 16;
+export default function ScrollIndicator({ length, orientation, viewRef, offset, style }) {
 
-export default function ScrollIndicator({ length }) {
+	if (offset === undefined) offset = 0
 
-	const [currentPage, setCurrentPage] = useState(0);
+	const [currentPage, setCurrentPage] = useState(0)
 
+	// Runs on first render.
 	useEffect(() => {
 		let lastKnownScrollPosition = 0;
 		let ticking = false;
-		let el = document.getElementsByClassName('App')[0]
+		let widthOrHeight = 0;
 
-		el.addEventListener('scroll', () => {
-			lastKnownScrollPosition = el.scrollTop
+		viewRef.current.addEventListener('scroll', () => {
+			if (orientation === 'vertical') {
+				lastKnownScrollPosition = viewRef.current.scrollTop
+				widthOrHeight = viewRef.current.clientHeight + offset
+			}
+			else {
+				lastKnownScrollPosition = viewRef.current.scrollLeft
+				widthOrHeight = viewRef.current.clientWidth + offset
+			}
 
 			// since the scroll event fires very often, we need to debounce it.
 			if (!ticking) {
 				window.setTimeout(() => {
-					setCurrentPage(Math.floor(lastKnownScrollPosition / window.innerHeight))
+					setCurrentPage(Math.round(lastKnownScrollPosition / widthOrHeight))
 					ticking = false;
 				}, UPDATE_INTERVAL);
 
 				ticking = true;
 			}
 		})
-	})
+	}, [orientation, viewRef, offset, setCurrentPage])
+
+	const handlePageChange = nextPage => {
+		let scrollDistance = 0
+		if (orientation === 'vertical') {
+			scrollDistance = (viewRef.current.clientHeight + offset) * nextPage
+		}
+		else {
+			scrollDistance = (viewRef.current.clientWidth + offset) * nextPage
+		}
+		scrollTo(scrollDistance, viewRef, orientation)
+	}
 
 	const getScrollIndicators = () => {
 		const scrollIndicators = []
@@ -47,18 +54,22 @@ export default function ScrollIndicator({ length }) {
 		for (let i = 0; i < length; i++) {
 			scrollIndicators.push(
 				<div
-					style={{ padding: '1rem 3rem 1rem 1rem' }}
-					onClick={() => {
-						// i-1 on the page margin because margin is on top,
-						// and the landing page does not have this margin.
-						// i.e. the first page is at 0px.
-						scrollTo(i * window.innerHeight + (i - 1) * PAGE_MARGIN)
-						setCurrentPage(i)
-					}}
 					key={i}
+					style={{
+						padding: '1rem 1rem 1rem 1rem',
+						WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)'
+					}}
+					onClick={() => handlePageChange(i)}
 				>
 					<div
-						className={`scroll-indicator ${Number(currentPage) === i ? 'scroll-indicator-current' : ''}`}
+						className={
+							`scroll-indicator ${Number(currentPage) === i ?
+								orientation === 'vertical' ?
+									'scroll-indicator-current-vertical' :
+									'scroll-indicator-current-horizontal'
+								:
+								''
+							}`}
 					/>
 				</div>
 			)
@@ -68,19 +79,15 @@ export default function ScrollIndicator({ length }) {
 	}
 
 	return (
-		<div className={Number(currentPage) === length - 1 ?
-			'scroll-indicator-container-dark fadeIn stagger-1' :
-			'scroll-indicator-container fadeIn stagger-1'}
+		<div
+			className={
+				orientation === 'vertical' ?
+					'scroll-indicator-container' :
+					'scroll-indicator-container row'
+			}
+			style={style}
 		>
-			<p
-				// If on the first page, display this text.
-				className={`attention-text ${currentPage === 0 ? 'opacity-1' : 'opacity-0'}`}
-				style={{ display: 'absolute', transform: 'translateX(60px) translateY(46px)' }}
-				id='scroll-indicator-title'
-			>
-				Du är här!
-			</p>
 			{getScrollIndicators()}
 		</div>
-	);
+	)
 }

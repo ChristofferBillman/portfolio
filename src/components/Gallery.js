@@ -1,7 +1,7 @@
 import CrossButton from './CrossButton'
 
 import '../styles/Gallery.css'
-import ScrollIndicator from './ScrollIndicatorNew'
+import ScrollIndicator from './ScrollIndicator'
 import { useRef } from 'react'
 
 export default function Gallery({ images, isOpen, setIsOpen }) {

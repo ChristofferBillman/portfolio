@@ -97,10 +97,6 @@ body {
   height: 2rem;
 }
 
-.vertical-spacing-big {
-  height: 6rem;
-}
-
 .link-container {
   display: flex;
   justify-content: space-between;

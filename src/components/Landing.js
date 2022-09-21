@@ -1,8 +1,6 @@
 import Page from './Page'
 import '../styles/Animations.css'
 
-import { isMobile } from '../utils/util'
-
 /*
  * The landing page. The first page you see when the site loads.
  * Takes no props.

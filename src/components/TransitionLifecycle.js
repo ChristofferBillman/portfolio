@@ -1,35 +1,9 @@
 import { useEffect, useState } from "react";
 
-export default function AnimateLifecycle({ children, transition, willRender, verbose }) {
+export default function AnimateLifecycle({ children, transition, willRender }) {
 
 	const [childrenMounted, setChildrenMounted] = useState(false);
 	const [transitioning, setTransitioning] = useState(false);
-
-	// Debug
-	useEffect(() => {
-		if (verbose) {
-			if (childrenMounted) console.log('mounted.')
-			else console.log('unmounted.')
-		}
-	}, [childrenMounted, verbose])
-
-	// Debug
-	useEffect(() => {
-		if (verbose) {
-			if (willRender) {
-				console.log('transitioning in...')
-				setTimeout(() => {
-					console.log('transition done.')
-				}, transition.duration)
-			}
-			else {
-				console.log('transitioning out...')
-				setTimeout(() => {
-					console.log('transition done.')
-				}, transition.duration)
-			}
-		}
-	}, [willRender, transition.duration, verbose])
 
 	useEffect(() => {
 		if (transitioning) return
