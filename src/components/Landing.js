@@ -9,7 +9,7 @@ import '../styles/Animations.css'
 export default function Landing() {
 	return (
 		<div>
-			<Page img={['landing-img.png']} navigationButtons={false} id='landing' useGallery={true} contentSide='left'>
+			<Page img={['landing-img.webp']} navigationButtons={false} id='landing' useGallery={true} contentSide='left'>
 				<div className='inner-content-container'>
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
