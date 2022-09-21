@@ -22,15 +22,17 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 					justifyContent: 'center',
 					width: '100%',
 				}}>
-					<ScrollIndicator
-						length={images.length}
-						orientation='horizontal'
-						viewRef={galleryRef}
-						style={{
-							backgroundColor: 'rgba(255,255,255)',
-							boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)'
-						}}
-					/>
+					{images.length !== 1 &&
+						<ScrollIndicator
+							length={images.length}
+							orientation='horizontal'
+							viewRef={galleryRef}
+							style={{
+								backgroundColor: 'rgba(255,255,255)',
+								boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)'
+							}}
+						/>
+					}
 				</div>
 			</div>
 
