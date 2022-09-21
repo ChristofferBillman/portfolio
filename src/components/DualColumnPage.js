@@ -12,7 +12,7 @@ import { useState } from 'react'
  */
 export default function DualColumnPage({ leftContent, rightContent, id, style }) {
 
-	const [loaded, setLoaded] = useState(true)
+	const [loaded] = useState(true)
 
 	return (
 		<>

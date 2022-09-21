@@ -1,7 +1,7 @@
 export default function CrossButton({ onClick, style }) {
 	return (
 		<div className='cross-button' onClick={onClick} style={style}>
-			<img src='icons/cross.svg' />
+			<img src='icons/cross.svg' alt='X' />
 		</div>
 	);
 }

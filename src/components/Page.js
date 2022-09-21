@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Gallery from './Gallery'
+import TransitionLifecycle from './TransitionLifecycle'
 
 /*
  * The main layout of each page. Takes up the entire viewport.
@@ -38,7 +39,15 @@ export default function Page({ children, img, style, id, useGallery, galleryIsOp
 
 					<div className={contentSide === 'left' ? 'banner-container' : 'banner-container-right'}>
 						{!useGallery ? (
-							<>
+							<TransitionLifecycle
+								willRender={loaded}
+								transition={{
+									initial: { opacity: 0, transform: 'translateY(40px)' },
+									transition: { opacity: 1, transform: 'translateY(0px)' },
+									exit: { opacity: 0 },
+									duration: 2000
+								}}
+							>
 								<div className='banner-mobile-overlay' />
 								<img
 									className='banner-img'
@@ -47,7 +56,7 @@ export default function Page({ children, img, style, id, useGallery, galleryIsOp
 									onLoad={onImgLoad}
 									style={imgStyle}
 								/>
-							</>
+							</TransitionLifecycle>
 						) : (
 							<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
 						)}
