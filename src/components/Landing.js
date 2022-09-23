@@ -13,7 +13,7 @@ export default function Landing() {
 				<div className='inner-content-container'>
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
-					<h3 className='fadeIn stagger-2'>Civilingengörsstudent</h3>
+					<h3 className='fadeIn stagger-2'>Civilingenjörsstudent</h3>
 
 					<h4 className='justify-text fadeIn stagger-3'>
 						Studerar Civingenjör Interaktion och Design vid Umeå Universitet.
