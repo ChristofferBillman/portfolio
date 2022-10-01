@@ -28,7 +28,7 @@ export const posts = [
 			"img/greetup/promo3.webp",
 			"img/greetup/login-zoomedout.webp",
 		],
-		"ghlink": "https://github.com/ChristofferBillman/ProjektIoT",
+		"ghlink": "https://github.com/emmylindgren/GreetUp",
 		"tags": [
 			"React",
 			"API",
