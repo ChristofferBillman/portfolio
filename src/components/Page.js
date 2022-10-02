@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import Gallery from './Gallery'
-import TransitionLifecycle from './TransitionLifecycle'
-
 /*
  * The main layout of each page. Takes up the entire viewport.
  * Takes props for the image and the id of its container.
@@ -12,64 +9,46 @@ import TransitionLifecycle from './TransitionLifecycle'
  * </Page>
  * 
  */
-export default function Page({ children, img, style, id, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide }) {
 
-	const [loaded, setLoaded] = useState(true)
-	const [imgOpacity, setImgOpacity] = useState(0)
-	const [imgOffset, setImgOffset] = useState(40)
-
-	const onImgLoad = () => {
-		setLoaded(true)
-		setImgOpacity(1)
-		setImgOffset(0)
-	}
-	const imgStyle = {
-		opacity: imgOpacity,
-		transform: `translateY(${imgOffset}px)`,
-	}
-
+const galleryContainerStyle = {
+	position: 'absolute',
+	width: 'fit-content',
+	height: '100vh',
+	top: 0,
+	backgroundColor: 'var(--white)',
+	zIndex: 10000
+}
+export default function Page({ children, img, style, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide, id }) {
 	return (
-		<>
-			{loaded ? (
-				<div id={id} style={style} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
+		<div className='layout-grid-container' id={id}>
+			<div style={style} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
 
-					<div className={contentSide === 'left' ? 'layout-content' : 'layout-content-right'}>
-						{children}
-					</div>
+				<div className={contentSide === 'left' ? 'layout-content' : 'layout-content-right'}>
+					{children}
+				</div>
 
-					<div className={contentSide === 'left' ? 'banner-container' : 'banner-container-right'}>
-						{!useGallery ? (
-							<TransitionLifecycle
-								willRender={loaded}
-								transition={{
-									initial: { opacity: 0, transform: 'translateY(40px)' },
-									transition: { opacity: 1, transform: 'translateY(0px)' },
-									exit: { opacity: 0 },
-									duration: 2000
-								}}
-							>
-								<div className='banner-mobile-overlay' />
-								<img
-									className='banner-img'
-									src={img}
-									alt='Christoffer'
-									onLoad={onImgLoad}
-									style={imgStyle}
-								/>
-							</TransitionLifecycle>
-						) : (
-							<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
-						)}
-					</div>
+				<div className={contentSide === 'left' ? 'banner-container' : 'banner-container-right'}>
+					{!useGallery && (
+						<>
+							<div className='banner-mobile-overlay' />
+							<img
+								className='banner-img'
+								src={img}
+								alt='Christoffer'
+							/>
+						</>
+					)}
 				</div>
-			) : (
-				<div className='layout-grid'>
-					<div className='layout-content'>
-						<p>Laddar...</p>
-					</div>
+			</div>
+
+			{useGallery && (
+				<div style={contentSide === 'left' ?
+					{ ...galleryContainerStyle, right: 0 } :
+					{ ...galleryContainerStyle, left: 0 }
+				}>
+					<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
 				</div>
-			)
-			}
-		</>
+			)}
+		</div>
 	)
 }

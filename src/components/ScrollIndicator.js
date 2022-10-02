@@ -3,7 +3,7 @@ import { scrollTo } from '../utils/util';
 
 const UPDATE_INTERVAL = 1;
 
-export default function ScrollIndicator({ length, orientation, viewRef, offset, style }) {
+export default function ScrollIndicator({ length, orientation, viewRef, offset, style, extraElement }) {
 
 	if (offset === undefined) offset = 0
 
@@ -88,6 +88,7 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset, 
 			style={style}
 		>
 			{getScrollIndicators()}
+			{extraElement}
 		</div>
 	)
 }

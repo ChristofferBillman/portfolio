@@ -71,6 +71,7 @@ body {
 .layout-grid-container {
   margin-top: 6rem;
   scroll-snap-align: start;
+  position: relative;
 }
 
 .banner-img {
@@ -160,6 +161,26 @@ body {
   width: 30px;
   height: 30px;
   padding: 1rem;
+}
+
+.expand-button {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.expand-icon {
+  opacity: 0.5;
+  transition: 200ms;
+}
+
+.expand-icon:hover {
+  opacity: 1;
+  transition: 200ms;
 }
 
 .chevron-button p {
