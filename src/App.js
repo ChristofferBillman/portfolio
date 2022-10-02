@@ -12,6 +12,7 @@ import './styles/Type.css';
 
 import { posts } from './data/posts';
 import { useRef } from 'react';
+import { isMobile } from './utils/util';
 
 export default function App() {
 
@@ -23,19 +24,21 @@ export default function App() {
 			{posts.map((post, index) => <Post key={index} {...post} />)}
 			<Footer />
 
-			<ScrollIndicator
-				length={posts.length + 2}
-				orientation='vertical'
-				viewRef={appRef}
-				offset={6 * 16}
-				style={{
-					position: 'fixed',
-					top: '50vh',
-					transform: 'translateY(-50%)',
-					left: '1rem',
-					padding: '1rem'
-				}}
-			/>
+			{!isMobile() &&
+				<ScrollIndicator
+					length={posts.length + 2}
+					orientation='vertical'
+					viewRef={appRef}
+					offset={6 * 16}
+					style={{
+						position: 'fixed',
+						top: '50vh',
+						transform: 'translateY(-50%)',
+						left: '1rem',
+						padding: '1rem'
+					}}
+				/>
+			}
 		</div >
 	);
 }

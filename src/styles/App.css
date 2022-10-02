@@ -151,18 +151,6 @@ body {
   gap: 40px
 }
 
-.chevron-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-color: var(--white);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  padding: 1rem;
-}
-
 .expand-button {
   width: 10px;
   height: 10px;
@@ -181,11 +169,6 @@ body {
 .expand-icon:hover {
   opacity: 1;
   transition: 200ms;
-}
-
-.chevron-button p {
-  margin-top: -10px;
-  margin-bottom: -10px;
 }
 
 .opacity-0 {

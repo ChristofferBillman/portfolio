@@ -1,16 +1,25 @@
-.gallery-container {
-	height: 100%;
+.gallery {
+	height: 100vh;
 	transition-duration: 500ms;
 	width: 40vw;
+}
+
+.gallery-container {
+	position: absolute;
+	width: fit-content;
+	height: 100vh;
+	top: 0;
+	background-color: var(--white);
+	z-index: 10000;
 }
 
 .images-container {
 	display: flex;
 	flex-direction: row;
 	flex-basis: 100%;
+	height: 100%;
 	overflow-x: scroll;
 	scroll-snap-type: x mandatory;
-	height: 100%;
 }
 
 .gallery-item {
@@ -22,19 +31,29 @@
 
 .gallery-item-fullscreen {
 	object-fit: contain;
-	transition: 0s;
-}
-
-.open {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 3;
-	height: 100vh;
-	transition-duration: 500ms;
 }
 
 .gallery-fullscreen {
 	width: 100vw;
 	transition-duration: 500ms;
+}
+
+@media only screen and (max-width: 768px) {
+	.gallery-container {
+		width: 100vw;
+		z-index: 1;
+	}
+
+	.gallery-container-fullscreen {
+		z-index: 1000000000;
+	}
+
+	.gallery {
+		width: 100vw;
+		height: 250px;
+	}
+
+	.gallery-fullscreen {
+		height: 100vh;
+	}
 }

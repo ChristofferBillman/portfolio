@@ -1,4 +1,5 @@
 import Gallery from './Gallery'
+import '../styles/Gallery.css'
 /*
  * The main layout of each page. Takes up the entire viewport.
  * Takes props for the image and the id of its container.
@@ -10,15 +11,8 @@ import Gallery from './Gallery'
  * 
  */
 
-const galleryContainerStyle = {
-	position: 'absolute',
-	width: 'fit-content',
-	height: '100vh',
-	top: 0,
-	backgroundColor: 'var(--white)',
-	zIndex: 10000
-}
-export default function Page({ children, img, style, useGallery, galleryIsOpen, setGalleryIsOpen, contentSide, id }) {
+export default function Page({ children, img, style, useGallery, isFullscreen, setIsFullscreen, contentSide, id }) {
+
 	return (
 		<div className='layout-grid-container' id={id}>
 			<div style={style} className={contentSide === 'left' ? 'layout-grid' : 'layout-grid-right'}>
@@ -42,11 +36,15 @@ export default function Page({ children, img, style, useGallery, galleryIsOpen, 
 			</div>
 
 			{useGallery && (
-				<div style={contentSide === 'left' ?
-					{ ...galleryContainerStyle, right: 0 } :
-					{ ...galleryContainerStyle, left: 0 }
-				}>
-					<Gallery images={img} isOpen={galleryIsOpen} setIsOpen={setGalleryIsOpen} />
+				<div
+					className={`gallery-container ${isFullscreen ? 'gallery-container-fullscreen' : ''}`}
+					style={contentSide === 'left' ? { right: 0 } : { left: 0 }}
+				>
+					<Gallery
+						images={img}
+						isFullscreen={isFullscreen}
+						setIsFullscreen={setIsFullscreen}
+					/>
 				</div>
 			)}
 		</div>

@@ -2,6 +2,7 @@
 	.layout-grid {
 		grid-template-columns: 40px auto 40px;
 		grid-template-rows: 250px 5fr;
+		background-color: var(--white);
 	}
 
 	.layout-grid-container {
@@ -33,7 +34,7 @@
 
 	.inner-content-container {
 		width: fit-content;
-		padding-top: 150px;
+		margin-top: 150px;
 		overflow-y: scroll;
 		scrollbar-width: none;
 	}
@@ -71,34 +72,6 @@
 	.banner-container-right {
 		grid-row: 1;
 		grid-column: 1/4;
-	}
-
-	.scroll-indicator-container {
-		left: -5px;
-		height: 50vh;
-		display: none;
-	}
-
-	.scroll-indicator-container-dark {
-		left: -5px;
-		height: 50vh;
-		display: none;
-	}
-
-	#scroll-indicator-title {
-		display: none;
-		opacity: 0;
-	}
-
-	.cross-button {
-		width: 70px;
-		height: 70px;
-		border-radius: 50%;
-		background-color: var(--white);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
 	}
 
 	.contact-section {

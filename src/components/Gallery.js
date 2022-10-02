@@ -1,21 +1,16 @@
 import '../styles/Gallery.css'
 import ScrollIndicator from './ScrollIndicator'
-import { useRef, useState } from 'react'
-import { ExpandButton, ShrinkButton, CrossButton } from './Buttons'
+import { useRef } from 'react'
+import { ExpandButton, ShrinkButton } from './Buttons'
+import { isMobile } from '../utils/util'
 
-export default function Gallery({ images, isOpen, setIsOpen }) {
+export default function Gallery({ images, setIsFullscreen, isFullscreen }) {
 
 	const galleryRef = useRef(null)
 
-	const [isFullscreen, setIsFullscreen] = useState(false)
-
 	return (
-		<div className={`gallery-container ${isOpen ? 'open' : ''} ${isFullscreen ? 'gallery-fullscreen' : ''}`}>
+		<div className={`gallery ${isFullscreen ? 'gallery-fullscreen' : ''}`}>
 			<div className='gallery-controls'>
-				<CrossButton
-					onClick={() => { setIsOpen(!isOpen) }}
-					style={{ position: 'absolute', right: '20px', top: '20px', visibility: isOpen ? 'visible' : 'hidden' }}
-				/>
 				<div style={{
 					position: 'absolute',
 					right: 0,
@@ -24,7 +19,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 					justifyContent: 'center',
 					width: '100%',
 				}}>
-					{images.length !== 1 &&
+					{(!isMobile() || isFullscreen) &&
 						<ScrollIndicator
 							length={images.length}
 							orientation='horizontal'
@@ -39,7 +34,7 @@ export default function Gallery({ images, isOpen, setIsOpen }) {
 				</div>
 			</div>
 
-			<div className={isOpen ? 'displaynone' : 'banner-mobile-overlay'} />
+			<div className={isFullscreen ? 'displaynone' : 'banner-mobile-overlay'} />
 			<div className='images-container' ref={galleryRef}>
 				{images.map((image, index) => <img key={index} src={image} alt='gallery-img' className={`gallery-item ${isFullscreen ? 'gallery-item-fullscreen' : ''}`} />)}
 			</div>

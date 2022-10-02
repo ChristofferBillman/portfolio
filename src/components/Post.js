@@ -14,7 +14,7 @@ import { isMobile } from '../utils/util';
  */
 export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id, link }) {
 
-	const [galleryIsOpen, setGalleryIsOpen] = useState(false)
+	const [isFullscreen, setIsFullscreen] = useState(false)
 
 	return (
 		<Page
@@ -22,8 +22,8 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 			img={images}
 			useGallery={true}
 			contentSide='left'
-			galleryIsOpen={galleryIsOpen}
-			setGalleryIsOpen={setGalleryIsOpen}
+			isFullscreen={isFullscreen}
+			setIsFullscreen={setIsFullscreen}
 		>
 
 			<div className='inner-content-container'>
@@ -42,7 +42,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 					{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
 					{link ? <a href={link} target='__blank'>Besök webbplats</a> : ''}
 					{isMobile() ? (
-						<p className='clickable-text nomargin' onClick={() => setGalleryIsOpen(true)}>Visa bilder</p>
+						<p className='clickable-text nomargin' onClick={() => setIsFullscreen(true)}>Visa bilder</p>
 					) : null}
 				</div>
 
