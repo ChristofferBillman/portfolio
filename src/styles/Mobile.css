@@ -20,7 +20,6 @@
 		grid-template-rows: 250px 5fr;
 	}
 
-
 	.layout-content {
 		grid-column: 2;
 		grid-row: 1;

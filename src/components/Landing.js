@@ -13,6 +13,9 @@ export default function Landing() {
 				<div className='inner-content-container'>
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
+
+					<div style={{backgroundColor: 'var(--white)'}}>
+
 					<h3 className='fadeIn stagger-2'>Civilingenjörsstudent</h3>
 
 					<h4 className='justify-text fadeIn stagger-3'>
@@ -49,6 +52,7 @@ export default function Landing() {
 
 					<div className='center fadeIn stagger-5'>
 						<p className='attention-text'>Skrolla!</p>
+					</div>
 					</div>
 				</div>
 			</Page>
