@@ -16,18 +16,18 @@ export default function ScrollIndicator({ length, orientation, viewRef, offset, 
 		let widthOrHeight = 0;
 
 		viewRef.current.addEventListener('scroll', () => {
-			if (orientation === 'vertical') {
-				lastKnownScrollPosition = viewRef.current.scrollTop
-				widthOrHeight = viewRef.current.clientHeight + offset
-			}
-			else {
-				lastKnownScrollPosition = viewRef.current.scrollLeft
-				widthOrHeight = viewRef.current.clientWidth + offset
-			}
-
 			// since the scroll event fires very often, we need to debounce it.
 			if (!ticking) {
 				window.setTimeout(() => {
+					if (orientation === 'vertical') {
+						lastKnownScrollPosition = viewRef.current.scrollTop
+						widthOrHeight = viewRef.current.clientHeight + offset
+					}
+					else {
+						lastKnownScrollPosition = viewRef.current.scrollLeft
+						widthOrHeight = viewRef.current.clientWidth + offset
+					}
+
 					setCurrentPage(Math.round(lastKnownScrollPosition / widthOrHeight))
 					ticking = false;
 				}, UPDATE_INTERVAL);
