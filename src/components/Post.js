@@ -28,6 +28,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 			<div className='inner-content-container'>
 				<h1>{title}</h1>
+				<div style={{backgroundColor: 'var(--white)'}}>
 				<div className='link-container'>
 					<h3>{subtitle}</h3>
 					<h4>{year}</h4>
@@ -46,7 +47,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 					) : null}
 				</div>
 
-
+				</div>
 			</div>
 		</Page>
 	)
