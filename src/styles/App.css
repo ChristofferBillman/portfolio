@@ -123,6 +123,7 @@ body {
   border-radius: 100px;
   background-color: var(--transparent-gray);
   transition-duration: 200ms;
+  cursor: pointer;
 }
 
 .scroll-indicator-current-vertical {

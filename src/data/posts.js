@@ -3,7 +3,7 @@ export const posts = [
 		"name": "umea-transit-map",
 		"title": "Umeå Lokaltrafik Linjekarta",
 		"subtitle": "En karta",
-		"body": "Ultras (Umeå Lokaltrafik) existerande karta tyckte jag behövde en uppgradering. Därför skapade jag en en ny busslinjekarta i form av en interaktiv webbapplikation. I min utformning valde jag att göra en mer abstrakt tolkning av kartan, där kopplingen till den verkliga världen skalats bort.",
+		"body": "Ultras (Umeå Lokaltrafik) existerande karta tyckte jag behövde en uppgradering. Därför skapade jag en en ny busslinjekarta i form av en interaktiv webbapplikation. I min utformning valde jag att göra en mer abstrakt tolkning av kartan, där kopplingen till den verkliga världen skalats bort. Kartan är fortfarande under utveckling och en hel del funktioner är planerade, så håll ögonen öppna!",
 		"images": [
 			"img/umea-transit-map/closeup.png",
 			"img/umea-transit-map/darkmode-print.png",
