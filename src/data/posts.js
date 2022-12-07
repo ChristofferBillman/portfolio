@@ -1,5 +1,24 @@
 export const posts = [
 	{
+		"name": "umea-transit-map",
+		"title": "Umeå Lokaltrafik Linjekarta",
+		"subtitle": "En karta",
+		"body": "Ultras (Umeå Lokaltrafik) existerande karta tyckte jag behövde en uppgradering. Därför skapade jag en en ny busslinjekarta i form av en interaktiv webbapplikation. I min utformning valde jag att göra en mer abstrakt tolkning av kartan, där kopplingen till den verkliga världen skalats bort.",
+		"images": [
+			"img/umea-transit-map/closeup.png",
+			"img/umea-transit-map/darkmode-print.png",
+			"img/umea-transit-map/menu.png"
+		],
+		"ghlink": "https://github.com/ChristofferBillman/umea-transit-map",
+		"link": "https://transit.christofferbillman.se",
+		"tags": [
+			"React",
+			"TypeScript",
+			"Figma"
+		],
+		"year": "Under utveckling",
+	},
+	{
 		"name": "trip-cost-calculator",
 		"title": "Reseräknaren",
 		"subtitle": "Ett verktyg",
@@ -59,7 +78,7 @@ export const posts = [
 	}, {
 		"name": "portfolio3",
 		"title": "Portfolio v.3",
-		"subtitle": "Fritid",
+		"subtitle": "",
 		"body": "Den tredje försöket till en portfoliosida! Denna version kom faktiskt till, och projektet blev mycket mer ambitiöst än vad de tidigare två var! Två flugor en smäll!",
 		"images": [
 			"img/portfolio3/grafisk-profil-rosa.webp",
