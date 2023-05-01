@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Page from './Page';
 
-import { isMobile } from '../utils/util';
+import { isMobile, scrollToElement } from '../utils/util';
 
 /*
  * A post. A wrapper for a Page, which takes props related to a post instead of children.
@@ -24,6 +24,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 			contentSide='left'
 			isFullscreen={isFullscreen}
 			setIsFullscreen={setIsFullscreen}
+			id={name}
 		>
 
 			<div className='inner-content-container'>
@@ -43,7 +44,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 					{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
 					{link ? <a href={link} target='__blank'>Besök webbplats</a> : ''}
 					{isMobile() ? (
-						<p className='clickable-text nomargin' onClick={() => setIsFullscreen(true)}>Visa bilder</p>
+						<p className='clickable-text nomargin' onClick={() =>  {setIsFullscreen(true); scrollToElement(name)}}>Visa bilder</p>
 					) : null}
 				</div>
 
