@@ -14,7 +14,7 @@ export default function Gallery({ images, setIsFullscreen, isFullscreen }) {
 				<div style={{
 					position: 'absolute',
 					right: 0,
-					bottom: '4rem',
+					bottom: '6rem',
 					display: 'flex',
 					justifyContent: 'center',
 					width: '100%',
