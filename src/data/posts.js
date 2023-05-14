@@ -1,5 +1,25 @@
 export const posts = [
 	{
+		"name": "chare",
+		"title": "Chare",
+		"subtitle": "Ett projekt",
+		"body": "Projekt i kursen prototyputveckling av mobila applikationer. Här designade och utvecklade vi en app för att göra ridesharing enklare. Mest krut las på att få till en bra design och att utveckla ett fungerande koncept. Sedan så påbörjade vi utvecklingen av en MVP av produkten, i form av en androidapp, med en backend i C#.",
+		"images": [
+			"img/chare/Hero.png",
+			"img/chare/Search.png",
+			"img/chare/Trip Detail.png",
+			"img/chare/Profile.png",
+			"img/chare/1-3.png",
+			"img/chare/4-6.png",
+		],
+		"tags": [
+			"Figma",
+			"Android",
+			"C#"
+		],
+		"year": "2022",
+	},
+	{
 		"name": "umea-transit-map",
 		"title": "Umeå Lokaltrafik Linjekarta",
 		"subtitle": "En karta",
