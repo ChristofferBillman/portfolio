@@ -31,7 +31,7 @@ export default function Footer() {
 					<p className='white nomargin'>Christoffer Billman</p>
 				</div>
 
-				<p style={{ marginTop: '3em' }} className='white nomargin'>© Christoffer Billman 2022</p>
+				<p style={{ marginTop: '3em' }} className='white nomargin'>© Christoffer Billman 2023</p>
 			</div>
 		</div>
 	return (
