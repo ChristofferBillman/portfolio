@@ -13,6 +13,7 @@ import './styles/Type.css';
 import { posts } from './data/posts';
 import { useRef } from 'react';
 import { isMobile } from './utils/util';
+import About from './components/About';
 
 export default function App() {
 
@@ -21,12 +22,13 @@ export default function App() {
 	return (
 		<div className='App' ref={appRef}>
 			<Landing />
+			<About />
 			{posts.map((post, index) => <Post key={index} {...post} />)}
 			<Footer />
 
 			{!isMobile() &&
 				<ScrollIndicator
-					length={posts.length + 2}
+					length={posts.length + 3}
 					orientation='vertical'
 					viewRef={appRef}
 					offset={6 * 16}
