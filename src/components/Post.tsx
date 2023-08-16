@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Page from './Page';
 
 import { isMobile, scrollToElement } from '../utils/util';
+import {Language, useLanguageContext} from "../contexts/LanguageContext";
+import React from 'react';
 
 /*
  * A post. A wrapper for a Page, which takes props related to a post instead of children.
@@ -15,6 +17,7 @@ import { isMobile, scrollToElement } from '../utils/util';
 export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id, link }) {
 
 	const [isFullscreen, setIsFullscreen] = useState(false)
+	const locale: Language = useLanguageContext()
 
 	return (
 		<Page
@@ -41,8 +44,8 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 				<p className='justify-text'>{body}</p>
 
 				<div className='row gap-40'>
-					{ghlink ? <a href={ghlink} target='__blank'>Källkod</a> : ''}
-					{link ? <a href={link} target='__blank'>Besök webbplats</a> : ''}
+					{ghlink ? <a href={ghlink} target='__blank'>{locale.SourceCode}</a> : ''}
+					{link ? <a href={link} target='__blank'>{locale.VisitWebsite}</a> : ''}
 					{isMobile() ? (
 						<p className='clickable-text nomargin' onClick={() =>  {setIsFullscreen(true); scrollToElement(name)}}>Visa bilder</p>
 					) : null}

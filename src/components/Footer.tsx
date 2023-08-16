@@ -2,6 +2,8 @@ import DualColumnPage from './DualColumnPage'
 import { scrollToElement } from '../utils/util';
 
 import '../styles/Footer.css'
+import {Language, useLanguageContext} from "../contexts/LanguageContext";
+import React from 'react';
 
 /*
  * Footer
@@ -9,21 +11,23 @@ import '../styles/Footer.css'
 
 export default function Footer() {
 
+	const locale: Language = useLanguageContext();
+
 	const content =
 		<div className='footer-content'>
 			<div>
-				<h1 className='white'>Nu börjar det!</h1>
-				<p className='clickable-text' onClick={() => scrollToElement('landing')}>Till toppen ^</p>
+				<h1 className='white'>{locale.FooterHeader}</h1>
+				<p className='clickable-text' onClick={() => scrollToElement('landing')}>{locale.ReturnToTop} ^</p>
 			</div>
 
 			<div className='contact-section'>
-				<h1 className='white'>Kontakt</h1>
+				<h1 className='white'>{locale.Contact}</h1>
 				<div className='contact'>
-					<h4 className='white nomargin'>Mejl</h4>
+					<h4 className='white nomargin'>{locale.Email}</h4>
 					<p className='white nomargin'>christofferbillman@gmail.com</p>
 				</div>
 				<div className='contact'>
-					<h4 className='white nomargin'>Telefon</h4>
+					<h4 className='white nomargin'>{locale.Phone}</h4>
 					<p className='white nomargin'>070 577 22 97</p>
 				</div>
 				<div className='contact'>

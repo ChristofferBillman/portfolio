@@ -10,25 +10,30 @@ import './styles/App.css';
 import './styles/Mobile.css'
 import './styles/Type.css';
 
-import { posts } from './data/posts';
-import { useRef } from 'react';
+import { postsSE } from './data/postsSE';
+import { postsEN } from './data/postsEN';
+import React, {useRef } from 'react';
 import { isMobile } from './utils/util';
 import About from './components/About';
+import {Language, useLanguageContext} from "./contexts/LanguageContext";
 
 export default function App() {
 
 	const appRef = useRef(null)
 
+	const locale: Language = useLanguageContext()
+
+	const posts = locale.Name === 'SE' ? postsSE : postsEN
+
 	return (
 		<div className='App' ref={appRef}>
 			<Landing />
-			<About />
 			{posts.map((post, index) => <Post key={index} {...post} />)}
 			<Footer />
 
 			{!isMobile() &&
 				<ScrollIndicator
-					length={posts.length + 3}
+					length={posts.length + 2}
 					orientation='vertical'
 					viewRef={appRef}
 					offset={6 * 16}

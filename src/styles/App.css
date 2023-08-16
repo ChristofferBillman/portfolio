@@ -183,3 +183,13 @@ body {
 .cross-button {
   display: none;
 }
+
+#switchLang {
+  position: relative;
+  top: 11rem;
+  left: 3rem;
+  z-index: 10000000000;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}

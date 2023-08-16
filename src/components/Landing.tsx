@@ -1,5 +1,7 @@
 import Page from './Page'
 import '../styles/Animations.css'
+import {Language, useLanguageContext, useLanguageContextSetter} from "../contexts/LanguageContext";
+import React from 'react';
 
 /*
  * The landing page. The first page you see when the site loads.
@@ -7,8 +9,22 @@ import '../styles/Animations.css'
  */
 
 export default function Landing() {
+	const locale: Language = useLanguageContext()
+	const setLang = useLanguageContextSetter()
+
+	const switchLanguage = (e) => {
+		e.preventDefault()
+		if(locale.Name === 'SE') {
+			setLang('EN')
+			return
+		}
+		setLang('SE')
+	}
+
 	return (
 		<div>
+			<button id="switchLang" className='clickable-text' onClick={switchLanguage}>{locale.InOppositeLang}?</button>
+
 			<Page img={['img/landing.png']} navigationButtons={false} id='landing' useGallery={false} contentSide='left'>
 				<div className='inner-content-container'>
 
@@ -16,11 +32,10 @@ export default function Landing() {
 
 					<div style={{backgroundColor: 'var(--white)'}}>
 
-					<h3 className='fadeIn stagger-2'>Civilingenjörsstudent</h3>
+					<h3 className='fadeIn stagger-2'>{locale.EngineeringStudent}</h3>
 
 					<h4 className='justify-text fadeIn stagger-3'>
-						Studerar Civingenjör Interaktion och Design vid Umeå Universitet.
-						Grafisk design, programmering och webbutveckling är saker som intresserar!
+						{locale.LandingText}
 					</h4>
 
 					<div className='vertical-spacing' />
@@ -44,14 +59,14 @@ export default function Landing() {
 							href='CV.pdf'
 							download
 						>
-							Hämta CV
+							{locale.DownloadCV}
 						</a>
 					</div>
 
 					<div className='vertical-spacing' />
 
 					<div className='center fadeIn stagger-5'>
-						<p className='attention-text'>Skrolla!</p>
+						<p className='attention-text'>{locale.Scroll}!</p>
 					</div>
 					</div>
 				</div>

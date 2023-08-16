@@ -1,9 +1,9 @@
-export const posts = [
+export const postsEN = [
 	{
 		"name": "chare",
 		"title": "Chare",
-		"subtitle": "Ett projekt",
-		"body": "Projekt i kursen prototyputveckling av mobila applikationer. Här designade och utvecklade vi en app för att göra ridesharing enklare. Mest krut las på att få till en bra design och att utveckla ett fungerande koncept. Sedan så påbörjade vi utvecklingen av en MVP av produkten, i form av en androidapp, med en backend i C#.",
+		"subtitle": "Project",
+		"body": " Project in the course Prototype Development for Mobile Applications. During this project me and 4 other students developed an app to make ride sharing easier. Most of the effort was put on developing a good design and a working concept. Then development of a MVP of the product started, in the form of an android application with a backend in C#.",
 		"images": [
 			"img/chare/Hero.png",
 			"img/chare/Search.png",
@@ -21,9 +21,9 @@ export const posts = [
 	},
 	{
 		"name": "umea-transit-map",
-		"title": "Umeå Lokaltrafik Linjekarta",
-		"subtitle": "En karta",
-		"body": "Ultras (Umeå Lokaltrafik) existerande karta tyckte jag behövde en uppgradering. Därför skapade jag en en ny busslinjekarta i form av en interaktiv webbapplikation. I min utformning valde jag att göra en mer abstrakt tolkning av kartan, där kopplingen till den verkliga världen skalats bort. Kartan är fortfarande under utveckling och en hel del funktioner är planerade, så håll ögonen öppna!",
+		"title": "Umeå Local Transit Map",
+		"subtitle": "A Map",
+		"body": "I thought that the map of the local transit in Umeå needed an upgrade. That is why is created a new map in the form of an interactive web application. In my design I chose to make it more abstract, where real world details such as streets and geography have been removed. The map is still under development and more features are planned, so stay tuned!",
 		"images": [
 			"img/umea-transit-map/closeup.png",
 			"img/umea-transit-map/darkmode-print.png",
@@ -36,13 +36,13 @@ export const posts = [
 			"TypeScript",
 			"Figma"
 		],
-		"year": "Under utveckling",
+		"year": "Under development",
 	},
 	{
 		"name": "trip-cost-calculator",
-		"title": "Reseräknaren",
-		"subtitle": "Ett verktyg",
-		"body": "Ett verktyg för att räkna ut hur mycket en bilresa kostar. En grej som jag gjorde på fritiden under sommaren 2022.",
+		"title": "Trip Cost Calculator",
+		"subtitle": "Tool",
+		"body": "A tool to calculate how much a road trip costs. A thing that I did in my spare time during the summer of 2022.",
 		"images": [
 			"img/trip-cost-calculator/page1.png",
 		],
@@ -58,8 +58,8 @@ export const posts = [
 	{
 		"name": "greetup",
 		"title": "GreetUp",
-		"subtitle": "Ett projekt",
-		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick 5 veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer. För att bygga den här applikationen använde vi React för frontend och ASP.NET Core Web API, MySQL och Entity Framework för backend.",
+		"subtitle": "Project",
+		"body": "Project in the courses Technology for Social Media and Applications Development for Internet, where we had 5 weeks to develop a social media platform. The result was GreetUp, a social media platform suited for elderly in Australia with disabilities. To build this application we used React for the frontend and ASP.NET Core Web API, MySQL and Entity Framework for the backend.",
 		"images": [
 			"img/greetup/promomain.webp",
 			"img/greetup/promo1.webp",
@@ -78,8 +78,8 @@ export const posts = [
 	}, {
 		"name": "labplant",
 		"title": "Lab Plant",
-		"subtitle": "Ett projekt",
-		"body": "Detta var slutprojektet i kursen Design och Tjänsteutveckling för IoT vid Umeå Universitet. Kursen handlade till stor del om att bygga egna system och experimentera med mikrokontrollers och sensorer. I projektet byggde jag tillsammans med tre andra ett system för att övervaka och vattna krukväxter med hjälp av en ESP-32, ett urval sensorer och en Raspberry Pi 4.",
+		"subtitle": "Project",
+		"body": "This was the final project in the course Service Development and Design for The Internet of Things. The course was largely about building and experimenting with systems built from microcontrollers and sensors. Me and three other students built a system to monitor and water potted plants with the help of an ESP-32, an array of sensors and actuators and a Raspberry Pi 4.",
 		"images": [
 			"img/lab-plant/setup.webp",
 			"img/lab-plant/overview.webp",
@@ -99,7 +99,7 @@ export const posts = [
 		"name": "portfolio3",
 		"title": "Portfolio v.3",
 		"subtitle": "",
-		"body": "Den tredje försöket till en portfoliosida! Denna version kom faktiskt till, och projektet blev mycket mer ambitiöst än vad de tidigare två var! Två flugor en smäll!",
+		"body": "My third try at making a portfolio site. This version actually got implemented, and was more ambitious than the last two tries.",
 		"images": [
 			"img/portfolio3/grafisk-profil-rosa.webp",
 			"img/portfolio3/grafisk-profil.webp",
@@ -114,8 +114,8 @@ export const posts = [
 	}, {
 		"name": "skissteknik",
 		"title": "Rumsbokning",
-		"subtitle": "En uppgift",
-		"body": "Denna uppgift var del av kursen 'Design för användarupplevelse' hos designhögskolan i Umeå. Det gick huvudsakligen ut på att lära sig hur man arbetar med wireframes och iterativa designprocesser",
+		"subtitle": "Assignment",
+		"body": "This assignment was part of the course Designing for User Experience at the Umeå Institute of Design. It was mainly about learning how to work with wireframes and iterative design processes.",
 		"images": [
 			"img/skissteknik/page1.webp",
 			"img/skissteknik/page2.webp",
@@ -132,8 +132,8 @@ export const posts = [
 	}, {
 		"name": "vbost",
 		"title": "Västerbottensost",
-		"subtitle": "Ett projekt",
-		"body": "Slutprojekt i kursen design för användarupplevelse. Vi fick 4 veckor på oss att arbeta fram ett så kallat varumärkeshem till Västerbottensost.",
+		"subtitle": "Project",
+		"body": "Final project in the course Designing for User Experience. We got four weeks to develop a so called 'brand home' for the Swedish cheese producer Västerbottensost.",
 		"images": [
 			"img/vbost/ostprovning.webp",
 			"img/vbost/overview.webp",
