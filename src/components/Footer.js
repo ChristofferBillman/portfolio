@@ -12,7 +12,7 @@ export default function Footer() {
 	const content =
 		<div className='footer-content'>
 			<div>
-				<h1 className='white'>Nu tog det slut</h1>
+				<h1 className='white'>Nu börjar det!</h1>
 				<p className='clickable-text' onClick={() => scrollToElement('landing')}>Till toppen ^</p>
 			</div>
 
