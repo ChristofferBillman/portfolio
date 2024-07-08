@@ -81,7 +81,7 @@ const translations: Language[] = [
 	{
 		Name: 'SE',
 		EngineeringStudent: 'Civilingenjör',
-		LandingText: 'Precis tagit examen från Civilingenjörsprogrammet inom Interaktion och Design vid Umeå Universitet. Grafisk design, programmering och webbutveckling är saker som intresserar!',
+		LandingText: 'Precis tagit examen från Civilingenjörsprogrammet Interaktion och Design vid Umeå Universitet. UI/UX, webb och programmering är sådant som intresserar!',
 		DownloadCV: 'Hämta CV',
 		Scroll: 'Scrolla',
 		FooterHeader: 'Nu börjar det!',
@@ -103,7 +103,7 @@ const translations: Language[] = [
 	{
 		Name: 'EN',
 		EngineeringStudent: 'Engineer',
-		LandingText: 'Just graduated from M.Sc. Interaction Technology and Design at Umeå University. Graphic design, programming and web development are things that interest!',
+		LandingText: 'Just graduated from M.Sc. Interaction Technology & Design at Umeå University. UI/UX, web dev and programming are things of interest!',
 		DownloadCV: 'Download CV',
 		Scroll: 'Scroll',
 		FooterHeader: 'It begins here and now!',
