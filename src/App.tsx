@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Footer from './components/Footer';
 import Post from './components/Post';
+import About from './components/About'
 
 import './styles/App.css';
 import './styles/Mobile.css'
@@ -30,6 +31,7 @@ export default function App() {
 	return (
 		<div className='App' ref={appRef}>
 			<Landing />
+			<About/>
 			{posts.map((post, index) => <Post key={index} {...post} />)}
 			<Footer />
 
