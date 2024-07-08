@@ -17,7 +17,6 @@ export default function Footer() {
 		<div className='footer-content'>
 			<div>
 				<h1 className='white'>{locale.FooterHeader}</h1>
-				<p className='clickable-text' onClick={() => scrollToElement('landing')}>{locale.ReturnToTop} ^</p>
 			</div>
 
 			<div className='contact-section'>
@@ -35,7 +34,9 @@ export default function Footer() {
 					<p className='white nomargin'>Christoffer Billman</p>
 				</div>
 
-				<p style={{ marginTop: '3em' }} className='white nomargin'>© Christoffer Billman 2023</p>
+				<p className='clickable-text' style={{marginTop: '3rem', marginBottom: '3rem'}} onClick={() => scrollToElement('landing')}>{locale.ReturnToTop} ^</p>
+
+				<p style={{ marginTop: '3em' }} className='white nomargin'>© Christoffer Billman 2024</p>
 			</div>
 		</div>
 	return (

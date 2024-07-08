@@ -47,7 +47,7 @@ export const postsSE = [
 		"name": "knåp",
 		"title": "Knåp",
 		"subtitle": "Ett projekt",
-		"body": "Projekt i kursen innovativa mobila tjänster och system, där jag tillsammans med 4 andra studenter byggde en mobilapplikation. Vi skulle utgå från frågeställningen \"Empowering the elderly in their daily lives\". Resultatet blev ungefär ett BeReal, fast för äldre. Under projektet var även ett stort fokus att integrera AI på olika, lustiga sätt.",
+		"body": "Projekt i kursen innovativa mobila tjänster och system, där jag tillsammans med fyra andra studenter byggde en mobilapplikation. Vi skulle utgå från frågeställningen \"Empowering the elderly in their daily lives\". Resultatet blev ungefär ett BeReal, fast för äldre. Under projektet var även ett stort fokus att integrera AI på olika, lustiga sätt.",
 		"images": [
 			"img/knåp/promo.png",
 			"img/knåp/showcase.png",
@@ -123,7 +123,7 @@ export const postsSE = [
 		"name": "greetup",
 		"title": "GreetUp",
 		"subtitle": "Ett projekt",
-		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick 5 veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer. För att bygga den här applikationen använde vi React för frontend och ASP.NET Core Web API, MySQL och Entity Framework för backend.",
+		"body": "Slutprojekt i kurserna Teknik för Sociala Medier samt Applikationsutveckling för Internet. Vi fick fem veckor på oss att utveckla ett socialt media. Resultatet blev GreetUp, ett socialt media anpassat för äldre i Australien med funktionsvariationer. För att bygga den här applikationen använde vi React för frontend och ASP.NET Core Web API, MySQL och Entity Framework för backend.",
 		"images": [
 			"img/greetup/promomain.webp",
 			"img/greetup/promo1.webp",

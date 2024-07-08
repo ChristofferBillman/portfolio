@@ -63,7 +63,7 @@ export const postsEN = [
 		"name": "chare",
 		"title": "Chare",
 		"subtitle": "School project",
-		"body": " Project in the course Prototype Development for Mobile Applications. During this project me and 4 other students developed an app to make ride sharing easier. Most of the effort was put on developing a good design and a working concept. Then development of a MVP of the product started, in the form of an android application with a backend in C#.",
+		"body": " Project in the course Prototype Development for Mobile Applications. During this project me and four other students developed an app to make ride sharing easier. Most of the effort was put on developing a good design and a working concept. Then development of a MVP of the product started, in the form of an android application with a backend in C#.",
 		"images": [
 			"img/chare/Hero.png",
 			"img/chare/Search.png",
@@ -119,7 +119,7 @@ export const postsEN = [
 		"name": "greetup",
 		"title": "GreetUp",
 		"subtitle": "School project",
-		"body": "Project in the courses Technology for Social Media and Applications Development for Internet, where we had 5 weeks to develop a social media platform. The result was GreetUp, a social media platform suited for elderly in Australia with disabilities. To build this application we used React for the frontend and ASP.NET Core Web API, MySQL and Entity Framework for the backend.",
+		"body": "Project in the courses Technology for Social Media and Applications Development for Internet, where we had five weeks to develop a social media platform. The result was GreetUp, a social media platform suited for elderly in Australia with disabilities. To build this application we used React for the frontend and ASP.NET Core Web API, MySQL and Entity Framework for the backend.",
 		"images": [
 			"img/greetup/promomain.webp",
 			"img/greetup/promo1.webp",
