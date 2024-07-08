@@ -30,7 +30,7 @@ export default function Landing() {
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
 
-					<div style={{backgroundColor: 'var(--white)'}}>
+					<div style={{background: 'none'}}>
 
 					<h3 className='fadeIn stagger-2'>{locale.EngineeringStudent}</h3>
 
@@ -56,7 +56,7 @@ export default function Landing() {
 							LinkedIn
 						</a>
 						<a
-							href='CV.pdf'
+							href={locale.Name === "EN" ? 'CV Christoffer Billman EN.pdf' : 'CV Christoffer Billman SE.pdf'}
 							download
 						>
 							{locale.DownloadCV}

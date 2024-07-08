@@ -2,7 +2,6 @@ import React, {createContext, useContext, useState} from "react"
 
 interface languageContextProps {
 	children: React.ReactNode
-	language: string
 }
 
 export type Language = {
@@ -74,8 +73,8 @@ function getLocale() {
 const translations: Language[] = [
 	{
 		Name: 'SE',
-		EngineeringStudent: 'Civilingenjörsstudent',
-		LandingText: 'Studerar Civingenjör Interaktion och Design vid Umeå Universitet. Grafisk design, programmering och webbutveckling är saker som intresserar!',
+		EngineeringStudent: 'Civilingenjör',
+		LandingText: 'Precis tagit examen från Civingenjör Interaktion och Design vid Umeå Universitet. Grafisk design, programmering och webbutveckling är saker som intresserar!',
 		DownloadCV: 'Hämta CV',
 		Scroll: 'Scrolla',
 		FooterHeader: 'Nu börjar det!',
@@ -89,8 +88,8 @@ const translations: Language[] = [
 	},
 	{
 		Name: 'EN',
-		EngineeringStudent: 'Interaction Technology and Design Student',
-		LandingText: 'Studying my fifth and last year of my masters at Umeå University. Graphic design, programming and web development are things that interest!',
+		EngineeringStudent: 'Engineer',
+		LandingText: 'Just graduated from M.Sc. Interaction Technology and Design at Umeå University. Graphic design, programming and web development are things that interest!',
 		DownloadCV: 'Download CV',
 		Scroll: 'Scroll',
 		FooterHeader: 'So it begins!',

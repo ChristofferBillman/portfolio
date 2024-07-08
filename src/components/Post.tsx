@@ -19,6 +19,14 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 	const [isFullscreen, setIsFullscreen] = useState(false)
 	const locale: Language = useLanguageContext()
 
+	let linkText
+
+	if(link && link.text) {
+		linkText = link.text[locale.Name]
+	} else {
+		linkText = locale.VisitWebsite
+	}
+
 	return (
 		<Page
 			name={name}
@@ -32,7 +40,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 			<div className='inner-content-container'>
 				<h1>{title}</h1>
-				<div style={{backgroundColor: 'var(--white)'}}>
+				<div style={{background: 'none'}}>
 				<div className='link-container'>
 					<h3>{subtitle}</h3>
 					<h4>{year}</h4>
@@ -45,7 +53,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 				<div className='row gap-40'>
 					{ghlink ? <a href={ghlink} target='__blank'>{locale.SourceCode}</a> : ''}
-					{link ? <a href={link} target='__blank'>{locale.VisitWebsite}</a> : ''}
+					{link ? <a href={link.url} target='__blank'>{linkText}</a> : ''}
 					{isMobile() ? (
 						<p className='clickable-text nomargin' onClick={() =>  {setIsFullscreen(true); scrollToElement(name)}}>Visa bilder</p>
 					) : null}
