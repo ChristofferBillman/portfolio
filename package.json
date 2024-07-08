@@ -16,6 +16,9 @@
     "typescript": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
+  "overrides": {
+    "typescript": "^5.1.6"
+  },
   "devDependencies": {
     "gh-pages": "^4.0.0",
     "react-scripts": "5.0.1",
