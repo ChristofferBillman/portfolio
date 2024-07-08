@@ -1,5 +1,65 @@
 export const postsSE = [
 	{
+		"name": "thesis",
+		"title": "Exjobb",
+		"subtitle": "Examensarbete",
+		"body": "I samarbete med Omegapoint, en av de ledande konsultbolagen inom IT-säkerhet, undersökte jag hur olika användbarhetsaspekter påverkar den upplevda säkerheten hos hemsidor. För att göra detta byggde jag en fiktiv internetbank, där de medverkande fick ett antal uppgifter att slutföra och sedan fick svara på några frågor angående deras upplevelse.",
+		"images": [
+			"img/thesis/promo.png",
+			"img/thesis/graphicprofile.png",
+			"img/thesis/overview.png",
+			"img/thesis/payments.png",
+		],
+		"tags": [
+			"UI/UX-Research",
+			"Figma",
+			"AWS"
+		],
+		"year": "2024",
+		"link": {
+			"text": {
+				"SE": "Länk till rapport",
+				"EN": "Link to report"
+			},
+			"url": "https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-225743"
+		},
+	},
+	{
+		"name": "stocken",
+		"title": "Wikisajt",
+		"subtitle": "Ett projekt",
+		"body": "Ett hobbyprojekt som påbörjades när jag och några vänner startade en minecraftserver med fokus på worldbuilding och roleplaying. Vi var i behov av någonstans att dokumentera och skriva ned allt detta, och istället för att använda en färdig plattform (ex. Fandom) tyckte jag att det skulle vara en rolig utmaning att skapa en egen.",
+		"images": [
+			"img/wiki/promo.png",
+			"img/wiki/create.png",
+			"img/wiki/view.png",
+			"img/wiki/edit.png",
+		],
+		"tags": [
+			"Express",
+			"MongoDB",
+			"React"
+		],
+		"year": "2023",
+		"ghlink": "https://github.com/ChristofferBillman/stocken-wiki"
+	},
+	{
+		"name": "knåp",
+		"title": "Knåp",
+		"subtitle": "Ett projekt",
+		"body": "Projekt i kursen innovativa mobila tjänster och system, där jag tillsammans med 4 andra studenter byggde en mobilapplikation. Vi skulle utgå från frågeställningen \"Empowering the elderly in their daily lives\". Resultatet blev ungefär ett BeReal, fast för äldre. Under projektet var även ett stort fokus att integrera AI på olika, lustiga sätt.",
+		"images": [
+			"img/knåp/promo.png",
+			"img/knåp/showcase.png",
+		],
+		"tags": [
+			"Firebase",
+			"React Native",
+			"Expo"
+		],
+		"year": "2023"
+	},
+	{
 		"name": "chare",
 		"title": "Chare",
 		"subtitle": "Ett projekt",
@@ -30,7 +90,9 @@ export const postsSE = [
 			"img/umea-transit-map/menu.png"
 		],
 		"ghlink": "https://github.com/ChristofferBillman/umea-transit-map",
-		"link": "https://transit.christofferbillman.se",
+		"link": {
+			"url": "https://transit.christofferbillman.se"
+		},
 		"tags": [
 			"React",
 			"TypeScript",
@@ -38,7 +100,7 @@ export const postsSE = [
 		],
 		"year": "Under utveckling",
 	},
-	{
+	/*{
 		"name": "trip-cost-calculator",
 		"title": "Reseräknaren",
 		"subtitle": "Ett verktyg",
@@ -47,14 +109,16 @@ export const postsSE = [
 			"img/trip-cost-calculator/page1.png",
 		],
 		"ghlink": "https://github.com/ChristofferBillman/trip-cost-utility",
-		"link": "https://trip.christofferbillman.se",
+		"link": {
+			"url": "https://trip.christofferbillman.se"
+		},
 		"tags": [
 			"React",
 			"TypeScript",
 			"CSS"
 		],
 		"year": "2022",
-	},
+	}*/
 	{
 		"name": "greetup",
 		"title": "GreetUp",
@@ -95,7 +159,7 @@ export const postsSE = [
 			"Web"
 		],
 		"year": "2022",
-	}, {
+	},/* {
 		"name": "portfolio3",
 		"title": "Portfolio v.3",
 		"subtitle": "",
@@ -111,7 +175,7 @@ export const postsSE = [
 			"TypeScript"
 		],
 		"year": "2021"
-	}, {
+	}, */{
 		"name": "skissteknik",
 		"title": "Rumsbokning",
 		"subtitle": "En uppgift",
@@ -129,7 +193,7 @@ export const postsSE = [
 			"Wireframes",
 		],
 		"year": "2021",
-	}, {
+	}/*, {
 		"name": "vbost",
 		"title": "Västerbottensost",
 		"subtitle": "Ett projekt",
@@ -142,4 +206,4 @@ export const postsSE = [
 			"img/vbost/mobile.webp"
 		],
 		"year": "2021"
-	}]
+	}*/]

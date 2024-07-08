@@ -1,8 +1,68 @@
 export const postsEN = [
 	{
+		"name": "thesis",
+		"title": "Thesis",
+		"subtitle": "Thesis project",
+		"body": "In collaboration with Omegapoint, one of the leading IT-security consultancy firms in the nordics, I explored how different usability aspects affected the percieved security of websites. To do this, a fictional E-banking solution was built, where participants got a number of tasks to complete, and then answered a few questions regarding their experience.",
+		"images": [
+			"img/thesis/promo.png",
+			"img/thesis/graphicprofile.png",
+			"img/thesis/overview.png",
+			"img/thesis/payments.png",
+		],
+		"tags": [
+			"UI/UX-Research",
+			"Figma",
+			"AWS"
+		],
+		"year": "2024",
+		"link": {
+			"text": {
+				"SE": "Länk till rapport",
+				"EN": "Link to report"
+			},
+			"url": "https://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-225743"
+		},
+	},
+	{
+		"name": "stocken",
+		"title": "Wiki site",
+		"subtitle": "Hobby project",
+		"body": "A hobby project that was started in response to me and a few friends starting a Minecraft server, with a focus on worldbuilding and roleplaying. We needed somewhere to document and store information about the server, and instead of using a pre-existing platform (e.g. Fandom), I thought it would be a fun challenge to build our own.",
+		"images": [
+			"img/wiki/promo.png",
+			"img/wiki/create.png",
+			"img/wiki/view.png",
+			"img/wiki/edit.png",
+		],
+		"tags": [
+			"Express",
+			"MongoDB",
+			"React"
+		],
+		"year": "2023",
+		"ghlink": "https://github.com/ChristofferBillman/stocken-wiki"
+	},
+	{
+		"name": "knåp",
+		"title": "Knåp",
+		"subtitle": "School project",
+		"body": "Project as part of the course Innovative mobile services and systems, where I together with four other students built a mobile app. We were tasked with the challenge of \"Empowering the elderly in their daily lives\". The result was an app similar to BeReal, but for the elderly. The project also had a large focus on integrating AI in different and fun ways.",
+		"images": [
+			"img/knåp/promo.png",
+			"img/knåp/showcase.png",
+		],
+		"tags": [
+			"Firebase",
+			"React Native",
+			"Expo"
+		],
+		"year": "2023"
+	},
+	{
 		"name": "chare",
 		"title": "Chare",
-		"subtitle": "Project",
+		"subtitle": "School project",
 		"body": " Project in the course Prototype Development for Mobile Applications. During this project me and 4 other students developed an app to make ride sharing easier. Most of the effort was put on developing a good design and a working concept. Then development of a MVP of the product started, in the form of an android application with a backend in C#.",
 		"images": [
 			"img/chare/Hero.png",
@@ -38,7 +98,7 @@ export const postsEN = [
 		],
 		"year": "Under development",
 	},
-	{
+	/*{
 		"name": "trip-cost-calculator",
 		"title": "Trip Cost Calculator",
 		"subtitle": "Tool",
@@ -54,11 +114,11 @@ export const postsEN = [
 			"CSS"
 		],
 		"year": "2022",
-	},
+	},*/
 	{
 		"name": "greetup",
 		"title": "GreetUp",
-		"subtitle": "Project",
+		"subtitle": "School project",
 		"body": "Project in the courses Technology for Social Media and Applications Development for Internet, where we had 5 weeks to develop a social media platform. The result was GreetUp, a social media platform suited for elderly in Australia with disabilities. To build this application we used React for the frontend and ASP.NET Core Web API, MySQL and Entity Framework for the backend.",
 		"images": [
 			"img/greetup/promomain.webp",
@@ -78,7 +138,7 @@ export const postsEN = [
 	}, {
 		"name": "labplant",
 		"title": "Lab Plant",
-		"subtitle": "Project",
+		"subtitle": "School project",
 		"body": "This was the final project in the course Service Development and Design for The Internet of Things. The course was largely about building and experimenting with systems built from microcontrollers and sensors. Me and three other students built a system to monitor and water potted plants with the help of an ESP-32, an array of sensors and actuators and a Raspberry Pi 4.",
 		"images": [
 			"img/lab-plant/setup.webp",
@@ -95,7 +155,7 @@ export const postsEN = [
 			"Web"
 		],
 		"year": "2022",
-	}, {
+	}, /*{
 		"name": "portfolio3",
 		"title": "Portfolio v.3",
 		"subtitle": "",
@@ -111,7 +171,7 @@ export const postsEN = [
 			"TypeScript"
 		],
 		"year": "2021"
-	}, {
+	}, */{
 		"name": "skissteknik",
 		"title": "Rumsbokning",
 		"subtitle": "Assignment",
@@ -129,7 +189,7 @@ export const postsEN = [
 			"Wireframes",
 		],
 		"year": "2021",
-	}, {
+	}, /*{
 		"name": "vbost",
 		"title": "Västerbottensost",
 		"subtitle": "Project",
@@ -142,4 +202,4 @@ export const postsEN = [
 			"img/vbost/mobile.webp"
 		],
 		"year": "2021"
-	}]
+	}*/]
