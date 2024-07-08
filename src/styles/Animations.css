@@ -9,6 +9,46 @@
 		transform: translateY(0px);
 	}
 }
+@property --grad-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+@property --color1 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsl(252, 100%, 50%)
+}
+@property --color2 {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: hsl(335, 100%, 50%)
+}
+
+@keyframes rainbow {
+	0% {
+		/*--grad-angle: 0deg;*/
+		--color1: hsl(335, 100%, 50%);
+		--color2: hsl(252, 100%, 50%);
+	}
+	50% {
+		/*--grad-angle: 360deg;*/
+		--color1: hsl(41, 100%, 50%);
+		--color2: hsl(287, 100%, 37%);
+	}
+	100% {
+		--color1: hsl(335, 100%, 50%);
+		--color2: hsl(252, 100%, 50%);
+	}
+}
+
+.rainbowAnimation {
+	background: linear-gradient(var(--grad-angle), var(--color1)  0%, var(--color2) 100%);
+	animation-name: rainbow;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
 
 .fadeIn {
 	opacity: 0;

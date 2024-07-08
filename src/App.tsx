@@ -12,10 +12,10 @@ import './styles/Type.css';
 
 import { postsSE } from './data/postsSE';
 import { postsEN } from './data/postsEN';
-import React, {useRef } from 'react';
+import React, { useRef } from 'react';
 import { isMobile } from './utils/util';
-import About from './components/About';
-import {Language, useLanguageContext} from "./contexts/LanguageContext";
+import { Language, useLanguageContext } from "./contexts/LanguageContext";
+import useRainbow from "./hooks/useRainbow";
 
 export default function App() {
 
@@ -24,6 +24,8 @@ export default function App() {
 	const locale: Language = useLanguageContext()
 
 	const posts = locale.Name === 'SE' ? postsSE : postsEN
+
+	useRainbow()
 
 	return (
 		<div className='App' ref={appRef}>
