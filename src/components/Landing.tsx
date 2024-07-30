@@ -25,7 +25,7 @@ export default function Landing() {
 		<div>
 			<button id="switchLang" className='clickable-text' onClick={switchLanguage}>{locale.InOppositeLang}?</button>
 
-			<Page img={['img/landing.png']} navigationButtons={false} id='landing' useGallery={false} contentSide='left'>
+			<Page img={['img/landing.webp']} navigationButtons={false} id='landing' useGallery={false} contentSide='left'>
 				<div className='inner-content-container'>
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>
