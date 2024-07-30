@@ -90,7 +90,7 @@ export const postsEN = [
 			"img/umea-transit-map/menu.png"
 		],
 		"ghlink": "https://github.com/ChristofferBillman/umea-transit-map",
-		"link": "https://transit.christofferbillman.se",
+		"link": { "url": "https://transit.christofferbillman.se" },
 		"tags": [
 			"React",
 			"TypeScript",
