@@ -9,7 +9,7 @@ export default function About() {
 
 	return (
         <Page
-            img='./about.png'
+            img='./about2.webp'
             useGallery={false}
             contentSide="left"
         >
