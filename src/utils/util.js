@@ -17,18 +17,19 @@ export const scrollTo = (pixelsFromStart, viewRef, direction) => {
 }
 
 export function isMobile() {
+	// Can't remeber why this logic was even neccesary in the first place.
+	/*
 	let isStandalone = window.navigator.standalone
 	let ua = window.navigator.userAgent.toLowerCase()
 	let isSafari = /safari/.test(ua)
 	let isMobile = /Android|webOS|iPhone|iPod/i.test(ua)
 
-	if (isMobile) {
-		if (!isStandalone && !isSafari) {
-			// Is iOS WKWebView or UIWebView
-			// Only for Instagram and Facebook in-app browsers
-			return true
-		}
-		return window.innerWidth < 768
+	if (isMobile) return true
+	if (!isStandalone && !isSafari) {
+		// Is iOS WKWebView or UIWebView
+		// Only for Instagram and Facebook in-app browsers
+		return true
 	}
-	return false
+	*/
+	return window.innerWidth < 768
 }
