@@ -13,7 +13,7 @@ export default function About() {
             useGallery={false}
             contentSide="left"
         >
-            <div style={{overflowY: 'scroll', height: '90vh', width: '100%', padding: '0 1rem 0 0'}}>
+            <div style={{overflowY: 'scroll', height: '90vh', maxWidth: '500px', padding: '0 1rem 0 0'}}>
             <h1>{locale.AboutTitle}</h1>
             <p> {locale.AboutP1}
                 <br/><br/>
