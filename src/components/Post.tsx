@@ -3,7 +3,6 @@ import Page from './Page';
 
 import { isMobile, scrollToElement } from '../utils/util';
 import {Language, useLanguageContext} from "../contexts/LanguageContext";
-import React from 'react';
 
 /*
  * A post. A wrapper for a Page, which takes props related to a post instead of children.
@@ -14,7 +13,7 @@ import React from 'react';
  * Where post is an object with the props.
  * 
  */
-export default function Post({ name, img, title, subtitle, body, images, ghlink, tags, year, id, link }) {
+export default function Post({ name, title, subtitle, body, images, ghlink, tags, year, link }) {
 
 	const [isFullscreen, setIsFullscreen] = useState(false)
 	const locale: Language = useLanguageContext()
@@ -29,7 +28,7 @@ export default function Post({ name, img, title, subtitle, body, images, ghlink,
 
 	return (
 		<Page
-			name={name}
+			//name={name}
 			img={images}
 			useGallery={true}
 			contentSide='left'

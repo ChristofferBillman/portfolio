@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function AnimateLifecycle({ children, transition, willRender }) {
+export default function TransitionLifecycle({ children, transition, willRender }) {
 
 	const [childrenMounted, setChildrenMounted] = useState(false);
 	const [transitioning, setTransitioning] = useState(false);

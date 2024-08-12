@@ -1,9 +1,18 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, ReactNode, CSSProperties, RefObject } from "react"
 import { scrollTo } from '../utils/util';
+
+interface Props {
+	length: number
+	orientation: 'vertical' | 'horizontal'
+	viewRef: RefObject<HTMLElement>
+	offset?: number
+	style: CSSProperties
+	extraElement?: ReactNode
+}
 
 const UPDATE_INTERVAL = 1;
 
-export default function ScrollIndicator({ length, orientation, viewRef, offset, style, extraElement }) {
+export default function ScrollIndicator({ length, orientation, viewRef, offset = 0, style, extraElement }: Props) {
 
 	if (offset === undefined) offset = 0
 

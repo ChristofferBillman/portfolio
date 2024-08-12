@@ -3,7 +3,6 @@ import { scrollToElement } from '../utils/util';
 
 import '../styles/Footer.css'
 import {Language, useLanguageContext} from "../contexts/LanguageContext";
-import React from 'react';
 
 /*
  * Footer
@@ -11,7 +10,7 @@ import React from 'react';
 
 export default function Footer() {
 
-	const locale: Language = useLanguageContext();
+	const locale: Language = useLanguageContext()
 
 	const content =
 		<div className='footer-content'>

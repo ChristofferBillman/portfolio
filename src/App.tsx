@@ -1,6 +1,8 @@
 /* Portfolio 4
  * Copyright (c) 2022 Christoffer Billman. All rights reserved.
 */
+import { useRef } from 'react';
+
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
 import Footer from './components/Footer';
@@ -13,7 +15,7 @@ import './styles/Type.css';
 
 import { postsSE } from './data/postsSE';
 import { postsEN } from './data/postsEN';
-import React, { useRef } from 'react';
+
 import { isMobile } from './utils/util';
 import { Language, useLanguageContext } from "./contexts/LanguageContext";
 import useRainbow from "./hooks/useRainbow";
