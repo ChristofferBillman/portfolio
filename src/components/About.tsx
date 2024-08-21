@@ -1,4 +1,3 @@
-import React from 'react'
 import Page from './Page'
 
 import { isMobile } from '../utils/util'
