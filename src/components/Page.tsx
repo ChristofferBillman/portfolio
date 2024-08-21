@@ -1,3 +1,5 @@
+import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react'
+
 import Gallery from './Gallery'
 import '../styles/Gallery.css'
 /*
@@ -11,7 +13,18 @@ import '../styles/Gallery.css'
  * 
  */
 
-export default function Page({ children, img, style, useGallery, isFullscreen, setIsFullscreen, contentSide, id }) {
+interface Props {
+	children: ReactNode
+	img?: string
+	style?: CSSProperties
+	useGallery?: boolean
+	isFullscreen?: boolean
+	setIsFullscreen?: Dispatch<SetStateAction<boolean>>
+	contentSide?: 'left' | 'right'
+	id?: string
+}
+
+export default function Page({ children, img, style, useGallery, isFullscreen, setIsFullscreen, contentSide, id}: Props) {
 
 	return (
 		<div className='layout-grid-container' id={id}>

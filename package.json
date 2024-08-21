@@ -1,9 +1,17 @@
 {
   "name": "portfolio-v4",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "homepage": "https://christofferbillman.se",
   "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "overrides": {
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,26 +19,19 @@
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "typescript": "^5.1.6",
-    "web-vitals": "^2.1.4"
-  },
-  "overrides": {
-    "typescript": "^5.1.6"
-  },
-  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
     "gh-pages": "^4.0.0",
-    "react-scripts": "5.0.1",
+    "typescript": "^5.1.6",
+    "vite": "^5.4.0",
+    "web-vitals": "^2.1.4",
     "webp-converter": "^2.3.3"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [

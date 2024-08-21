@@ -1,7 +1,6 @@
 import Page from './Page'
 import '../styles/Animations.css'
-import {Language, useLanguageContext, useLanguageContextSetter} from "../contexts/LanguageContext";
-import React from 'react';
+import {Language, useLanguageContext, useLanguageContextSetter} from "../contexts/LanguageContext"
 
 /*
  * The landing page. The first page you see when the site loads.
@@ -12,8 +11,7 @@ export default function Landing() {
 	const locale: Language = useLanguageContext()
 	const setLang = useLanguageContextSetter()
 
-	const switchLanguage = (e) => {
-		e.preventDefault()
+	const switchLanguage = () => {
 		if(locale.Name === 'SE') {
 			setLang('EN')
 			return
@@ -25,7 +23,7 @@ export default function Landing() {
 		<div>
 			<button id="switchLang" className='clickable-text' onClick={switchLanguage}>{locale.InOppositeLang}?</button>
 
-			<Page img={['img/landing.webp']} navigationButtons={false} id='landing' useGallery={false} contentSide='left'>
+			<Page img='img/landing.webp' id='landing' useGallery={false} contentSide='left'>
 				<div className='inner-content-container'>
 
 					<h1 className='fadeIn stagger-1'>Christoffer <br />Billman</h1>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { CSSProperties, useState, ReactNode } from 'react'
 
 /*
  * The main layout of each page. Takes up the entire viewport.
@@ -10,7 +10,14 @@ import { useState } from 'react'
  * </Page>
  * 
  */
-export default function DualColumnPage({ leftContent, rightContent, id, style }) {
+
+interface Props {
+	leftContent?: ReactNode
+	rightContent?: ReactNode
+	id?: string
+	style?: CSSProperties
+}
+export default function DualColumnPage({ leftContent, rightContent, id, style }: Props) {
 
 	const [loaded] = useState(true)
 

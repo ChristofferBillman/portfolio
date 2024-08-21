@@ -36,7 +36,7 @@ export default function Gallery({ images, setIsFullscreen, isFullscreen }) {
 
 			<div className={isFullscreen ? 'displaynone' : 'banner-mobile-overlay'} />
 			<div className='images-container' ref={galleryRef}>
-				{images.map((image, index) => <img key={index} src={image} alt='gallery-img' className={`gallery-item ${isFullscreen ? 'gallery-item-fullscreen' : ''}`} />)}
+				{images.map((image, index) => <img key={index} loading='lazy' src={image} alt='gallery-img' className={`gallery-item ${isFullscreen ? 'gallery-item-fullscreen' : ''}`} />)}
 			</div>
 		</div>
 	)
