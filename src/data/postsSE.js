@@ -41,7 +41,10 @@ export const postsSE = [
 			"React"
 		],
 		"year": "2023",
-		"ghlink": "https://github.com/ChristofferBillman/stocken-wiki"
+		"ghlink": "https://github.com/ChristofferBillman/stocken-wiki",
+		"link": {
+			"url": "https://wiki.christofferbillman.se"
+		},
 	},
 	{
 		"name": "knåp",
