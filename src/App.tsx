@@ -1,7 +1,7 @@
 /* Portfolio 4
  * Copyright (c) 2022 Christoffer Billman. All rights reserved.
 */
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Landing from './components/Landing';
 import ScrollIndicator from './components/ScrollIndicator';
@@ -12,6 +12,10 @@ import About from './components/About'
 import './styles/App.css';
 import './styles/Mobile.css'
 import './styles/Type.css';
+
+if(/Chrome/.test(navigator.userAgent)) {
+	import('./styles/ChromeOnly.css')
+}
 
 import { postsSE } from './data/postsSE';
 import { postsEN } from './data/postsEN';
