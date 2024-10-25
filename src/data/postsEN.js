@@ -1,5 +1,27 @@
 export const postsEN = [
 	{
+		"name": "newportfolio",
+		"title": "New Portfolio",
+		"subtitle": "Project",
+		"body": "I have started work on a new portfolio! I wanted to create something that described my projects in greater deatil, while also being a bit more fun. It is still under construction, but it is possible to read about my projects at the very least.",
+		"images": [
+			"img/portfolio5/promo.png",
+		],
+		"tags": [
+			"TypeScript",
+			"React",
+			"CSS"
+		],
+		"year": "Under construction",
+		"link": {
+			"text": {
+				"SE": "Besök sidan",
+				"EN": "Visit site"
+			},
+			"url": "https://preview.christofferbillman.se"
+		},
+	},
+	{
 		"name": "thesis",
 		"title": "Thesis",
 		"subtitle": "Thesis project",

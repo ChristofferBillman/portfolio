@@ -1,5 +1,27 @@
 export const postsSE = [
 	{
+		"name": "newportfolio",
+		"title": "Nytt portfolio",
+		"subtitle": "Projekt",
+		"body": "Jag har påbörjat arbetet med en ny portfoliosida! Jag ville skapa något som beskrev mina projekt i större detalj, och som var lite roligare! Den är fortfarande under konstruktion, men det går att läsa om mina projekt i alla fall.",
+		"images": [
+			"img/portfolio5/promo.png",
+		],
+		"tags": [
+			"TypeScript",
+			"React",
+			"CSS"
+		],
+		"year": "Under utveckling",
+		"link": {
+			"text": {
+				"SE": "Besök sidan",
+				"EN": "Visit site"
+			},
+			"url": "https://preview.christofferbillman.se"
+		},
+	},
+	{
 		"name": "thesis",
 		"title": "Exjobb",
 		"subtitle": "Examensarbete",
